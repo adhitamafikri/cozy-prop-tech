@@ -30,13 +30,27 @@ Our backend uses microservices architecture
 
 - User Facing Site: bun + Nuxt 4 + Pinia + Typescript + TailwindCSS
 - Admin Facing Site: bun + Vite + Vue 3 + Pinia + Typescript + TailwindCSS
-- Unit testing: Vitest
+- Maps: Leaflet + OpenStreetMap
+- Unit testing: Vitest + @testing-library/vue
 - E2E testing: Playwright
 
 ### Backend
 
-- Backend: Go v1.2
-  Data
+- Programming Language: Go v1.2
+- Routing Framework: Gin (github.com/gin-gonic/gin)
+- Database: PostgreSQL v17 + sqlc (https://sqlc.dev/)
+- Caching: Redis v8 + Go-Redis (https://github.com/redis/go-redis)
+- Logging: slog (https://pkg.go.dev/golang.org/x/exp/slog)
+- Auth: JWT (https://github.com/golang-jwt/jwt)
+- API Gateway: nginx
+- Live Reloading: Air (https://github.com/air-verse/air)
+
+### Infra CI/CD
+
+- Docker
+- Docker Compose
+- Infisical (secrets management)
+- Github Actions
 
 ## Project Notes
 
@@ -58,8 +72,8 @@ Documentation is NOT only in `notes/` or `docs/` directories. Search comprehensi
 
 - **Workspace root**: `README.md`, `AGENTS.md`
 - **Workspace notes**: `notes/*.md` (project-wide documentation including local development, setup, architecture)
-- **Backend submodule**: `backend/**/*.md`
-- **Frontend submodule**: `frontend/**/*.md`
+- **Backend**: `backend/**/*.md`
+- **Frontend**: `frontend/**/*.md`
 - **In-code**: Comments, JSDoc, docstrings (implementation details)
 
 **Before researching, search ALL locations:**
@@ -90,3 +104,16 @@ Code is truth. Documentation may lag behind. When in doubt:
 - Follow proper Go lang conventions for backend
 - Follow proper Typescript and Vue 3 conventions for frontend
 - Verify role-based access control
+
+## Running Project Locally
+
+We have multiple services here in this project. In order to know about which port the service is running on, consult to the table below:
+
+| Services | Ports |
+|---|---|
+| web | 5173 |
+| admin | 5174 |
+| api-gateway | 8080 |
+| auth-service | 8081 |
+| listings-service | 8082 |
+| chat-service | 8083 |

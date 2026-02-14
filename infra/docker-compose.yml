@@ -1,0 +1,18 @@
+services:
+  listing-service:
+    build:
+      context: ../backend/listing-service
+      dockerfile: Dockerfile
+      target: development
+    ports:
+      - "8082:8082"
+    volumes:
+      - ../backend/listing-service:/app
+    env_file:
+      - ../backend/listing-service/.env
+    networks:
+      - cozy-network
+
+networks:
+  cozy-network:
+    driver: bridge
