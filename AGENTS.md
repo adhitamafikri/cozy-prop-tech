@@ -17,12 +17,14 @@ This project is basically a monorepo containing several distinct sub-projects wi
 
 ### Backend
 
-Our backend uses microservices architecture
+Our backend **api** is responsible for handling these domains:
 
-- **api-gateway**: client request entry point, request routing, load balancing, auth middleware
-- **auth-service**: user registration, user login
-- **listing-service**: property listing service
-- **chat-service**: simple live chat service, connecting customers to our cs agents
+- Auth (RBAC)
+- Users
+- Properties
+- Listings
+- Availability
+- Booking
 
 ## Technology Stacks
 
@@ -42,8 +44,8 @@ Our backend uses microservices architecture
 - Caching: Redis v8 + Go-Redis (https://github.com/redis/go-redis)
 - Logging: slog (https://pkg.go.dev/golang.org/x/exp/slog)
 - Auth: JWT (https://github.com/golang-jwt/jwt)
-- API Gateway: nginx
 - Live Reloading: Air (https://github.com/air-verse/air)
+- Reverse Proxy: nginx
 
 ### Infra CI/CD
 
@@ -109,11 +111,8 @@ Code is truth. Documentation may lag behind. When in doubt:
 
 We have multiple services here in this project. In order to know about which port the service is running on, consult to the table below:
 
-| Services | Ports |
-|---|---|
-| web | 5173 |
-| admin | 5174 |
-| api-gateway | 8080 |
-| auth-service | 8081 |
-| listings-service | 8082 |
-| customer-support-service | 8083 |
+| Services                 | Ports |
+| ------------------------ | ----- |
+| web                      | 5173  |
+| admin                    | 5174  |
+| api                      | 8082  |

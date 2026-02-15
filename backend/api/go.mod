@@ -1,4 +1,4 @@
-module github.com/adhitamafikri/cozy-prop-tech/backend/listing-service
+module github.com/adhitamafikri/cozy-prop-tech/backend/api
 
 go 1.26.0
 

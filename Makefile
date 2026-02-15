@@ -1,13 +1,22 @@
 default:
 	@echo "Welcome Cozy Prop Tech"
 
-.PHONY: run-web
-run-web:
+.PHONY: start-web
+start-web:
 	cd ./frontend/web/
 	bun -v
 	bun run dev
 
-.PHONY: run-listing-service
-run-listing-service:
-	docker compose -f infra/docker-compose.yml up listing-service
+.PHONY: start-admin
+start-admin:
+	cd ./frontend/admin/
+	bun -v
+	bun run dev
 
+.PHONY: start-api
+start-api:
+	docker compose -f docker-compose.yml up -d api
+
+.PHONY: stop-api
+stop-api:
+	docker compose -f docker-compose.yml down api

@@ -9,7 +9,7 @@ COPY go.mod go.sum ./
 RUN go mod download
 
 COPY . .
-RUN CGO_ENABLED=0 GOOS=linux go build -o /bin/listing-service ./cmd
+RUN CGO_ENABLED=0 GOOS=linux go build -o /bin/api ./cmd
 
 # =============================================================================
 # TARGET: development - Run with Air for hot reload
@@ -36,9 +36,9 @@ FROM alpine AS production
 
 WORKDIR /app
 
-COPY --from=builder /bin/listing-service /usr/local/bin/listing-service
+COPY --from=builder /bin/api /usr/local/bin/api
 
 ENV GIN_MODE=release
 EXPOSE 8082
 
-CMD ["listing-service"]
+CMD ["api"]

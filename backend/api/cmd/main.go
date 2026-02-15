@@ -3,14 +3,14 @@ package main
 import (
 	"log"
 
-	"github.com/adhitamafikri/cozy-prop-tech/backend/listing-service/config"
+	"github.com/adhitamafikri/cozy-prop-tech/backend/api/config"
 	"github.com/gin-gonic/gin"
 )
 
 func main() {
 	cfg := config.LoadConfig()
 
-	log.Printf("Starting listing-service on %s", cfg.Port)
+	log.Printf("Starting API on %s", cfg.Port)
 
 	router := gin.Default()
 

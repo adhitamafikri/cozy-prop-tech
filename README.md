@@ -10,9 +10,6 @@ Add these to your `/etc/hosts`
 127.0.0.1 cozy-prop.local
 127.0.0.1 admin.cozy-prop.local
 127.0.0.1 api.cozy-prop.local
-127.0.0.1 api.cozy-prop-auth.local
-127.0.0.1 api.cozy-prop-listings.local
-127.0.0.1 api.cozy-prop-customer-support.local
 ```
 
 You need to have these things installed on your machine, in order to run this project locally
@@ -36,10 +33,14 @@ This repository contains several sub-projects
 
 ### Backend
 
-- **api-gateway**: client request entry point, request routing, auth checking
-- **auth-service**: user registration, user login
-- **listing-service**: property listing service
-- **customer-support-service**: customer support service, handles simple complaint management and live chat
+Our backend **api** is responsible for handling these domains:
+
+- Auth (RBAC)
+- Users
+- Properties
+- Listings
+- Availability
+- Booking
 
 ## Running the Project Locally
 
@@ -63,11 +64,8 @@ make down
 
 You will have these services running on your machine:
 
-| Services | Ports |
-|---|---|
-| web | 5173 |
-| admin | 5174 |
-| api-gateway | 8080 |
-| auth-service | 8081 |
-| listings-service | 8082 |
-| chat-service | 8083 |
+| Services                 | Ports |
+| ------------------------ | ----- |
+| web                      | 5173  |
+| admin                    | 5174  |
+| api                      | 8082  |

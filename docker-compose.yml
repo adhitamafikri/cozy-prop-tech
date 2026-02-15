@@ -1,15 +1,15 @@
 services:
-  listing-service:
+  api:
     build:
-      context: ../backend/listing-service
+      context: ./backend/api
       dockerfile: Dockerfile
       target: development
     ports:
       - "8082:8082"
     volumes:
-      - ../backend/listing-service:/app
+      - ./backend/api:/app
     env_file:
-      - ../backend/listing-service/.env
+      - ./backend/api/.env
     networks:
       - cozy-network
 
