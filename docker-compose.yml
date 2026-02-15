@@ -13,6 +13,12 @@ services:
     networks:
       - cozy-network
 
+  postgres:
+    image:
+
+  redis:
+    image:
+
 networks:
   cozy-network:
     driver: bridge

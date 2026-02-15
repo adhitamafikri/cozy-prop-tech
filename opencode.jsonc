@@ -4,12 +4,13 @@
     "autoupdate": true,
     "mcp": {
         "sequential-thinking": {
-            "command": "npx",
-            "args": [
+            "type": "local",
+            "command": [
+                "npx",
                 "-y",
                 "@modelcontextprotocol/server-sequential-thinking"
             ],
-            "enabled": true
+            "enabled": false
         },
         "context7": {
             "type": "remote",
