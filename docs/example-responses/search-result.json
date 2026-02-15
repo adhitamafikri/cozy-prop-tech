@@ -1,0 +1,125 @@
+{
+    "apiVersion": "1.0.0",
+    "lang": "en-US",
+    "data": [
+        {
+            "id": 1455,
+            "name": "Savia",
+            "internalName": "Savia",
+            "thumbnailUrl": "https://hostaway-platform.s3.us-west-2.amazonaws.com/listing/35050-481945-K09krMe6VxB0jnjlBZNhdtgTXpjXfW--kN3RJiTkrUvk-697cc8de3605e",
+            "country": {
+                "id": 1,
+                "name": "Indonesia"
+            },
+            "city": {
+                "id": 567,
+                "name": "Bekasi"
+            },
+            "district": {
+                "id": 568,
+                "name": "Bekasi CBD"
+            },
+            "latitude": -6.25639233,
+            "longitude": 106.98991706,
+            "areaSquareMeters": 0,
+            "guestCapacity": 2,
+            "extraGuestCapacity": 0,
+            "extraGuestFee": 100000,
+            "cleaningFee": 250000,
+            "baseRatePerNight": 665000,
+            "currencyCode": "IDR",
+            "numberOfBedrooms": 1,
+            "numberOfBeds": 1,
+            "numberOfBathrooms": 1,
+            "bestFor": null,
+            "minimumReservationNights": 2,
+            "maximumReservationNights": 365,
+            "hostawayId": 481945,
+            "facilities": null,
+            "rating": 0,
+            "buildingId": 63761,
+            "source": "HOSTAWAY",
+            "sourceId": "481945"
+        },
+        {
+            "id": 1452,
+            "name": "Sorai",
+            "internalName": "Sorai",
+            "thumbnailUrl": "https://hostaway-platform.s3.us-west-2.amazonaws.com/listing/35050-481354-KrZMn0b3d4B5JZufTLDJQrT4FY3V30j-wWHIRPvZ4oA-697b06deb77fe",
+            "country": {
+                "id": 1,
+                "name": "Indonesia"
+            },
+            "city": {
+                "id": 567,
+                "name": "Bekasi"
+            },
+            "district": {
+                "id": 568,
+                "name": "Bekasi CBD"
+            },
+            "latitude": -6.256403,
+            "longitude": 106.98994925,
+            "areaSquareMeters": 0,
+            "guestCapacity": 3,
+            "extraGuestCapacity": 0,
+            "extraGuestFee": 100000,
+            "cleaningFee": 400000,
+            "baseRatePerNight": 1065000,
+            "currencyCode": "IDR",
+            "numberOfBedrooms": 2,
+            "numberOfBeds": 2,
+            "numberOfBathrooms": 1,
+            "bestFor": null,
+            "minimumReservationNights": 2,
+            "maximumReservationNights": 365,
+            "hostawayId": 481354,
+            "facilities": null,
+            "rating": 0,
+            "buildingId": 63761,
+            "source": "HOSTAWAY",
+            "sourceId": "481354"
+        },
+        {
+            "id": 1418,
+            "name": "Sael",
+            "internalName": "Sael",
+            "thumbnailUrl": "https://hostaway-platform.s3.us-west-2.amazonaws.com/listing/35050-473786-xvRGoucJDDSaYasoGjmn9JLvfjhHZAlD3gKcLxq6qKE-6961a0e3bc315",
+            "country": {
+                "id": 1,
+                "name": "Indonesia"
+            },
+            "city": {
+                "id": 567,
+                "name": "Bekasi"
+            },
+            "district": {
+                "id": 568,
+                "name": "Bekasi CBD"
+            },
+            "latitude": -6.25639233,
+            "longitude": 106.98989871,
+            "areaSquareMeters": 0,
+            "guestCapacity": 2,
+            "extraGuestCapacity": 0,
+            "extraGuestFee": 100000,
+            "cleaningFee": 250000,
+            "baseRatePerNight": 665000,
+            "currencyCode": "IDR",
+            "numberOfBedrooms": 1,
+            "numberOfBeds": 1,
+            "numberOfBathrooms": 1,
+            "bestFor": [],
+            "minimumReservationNights": 2,
+            "maximumReservationNights": 365,
+            "hostawayId": 473786,
+            "facilities": null,
+            "rating": 0,
+            "buildingId": 63762,
+            "source": "HOSTAWAY",
+            "sourceId": "473786"
+        }
+    ],
+    "errors": null,
+    "_links": null
+}
