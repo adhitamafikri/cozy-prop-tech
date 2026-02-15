@@ -1,0 +1,600 @@
+{
+    "apiVersion": "1.0.0",
+    "lang": "en-US",
+    "data": [
+        {
+            "id": 33,
+            "parentId": 15,
+            "name": "Alam Sutera",
+            "category": "DISTRICT",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 55,
+            "parentId": 29,
+            "name": "Ancol",
+            "category": "DISTRICT",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 152,
+            "parentId": 39,
+            "name": "Badung",
+            "category": "DISTRICT",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 39,
+            "parentId": 1,
+            "name": "Bali",
+            "category": "CITY",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 23,
+            "parentId": 1,
+            "name": "Bandung",
+            "category": "CITY",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 37,
+            "parentId": 23,
+            "name": "Bandung City",
+            "category": "DISTRICT",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 567,
+            "parentId": 1,
+            "name": "Bekasi",
+            "category": "CITY",
+            "latitude": -6.2563925,
+            "longitude": 106.9899
+        },
+        {
+            "id": 568,
+            "parentId": 567,
+            "name": "Bekasi CBD",
+            "category": "DISTRICT",
+            "latitude": -6.2563925,
+            "longitude": 106.9899
+        },
+        {
+            "id": 153,
+            "parentId": 1,
+            "name": "Bogor",
+            "category": "CITY",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 575,
+            "parentId": 23,
+            "name": "Braga",
+            "category": "DISTRICT",
+            "latitude": -6.916712,
+            "longitude": 107.60783
+        },
+        {
+            "id": 21,
+            "parentId": 15,
+            "name": "BSD",
+            "category": "DISTRICT",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 156,
+            "parentId": 39,
+            "name": "Bukit",
+            "category": "DISTRICT",
+            "latitude": -8.79475,
+            "longitude": 115.126945
+        },
+        {
+            "id": 40,
+            "parentId": 39,
+            "name": "Canggu",
+            "category": "DISTRICT",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 548,
+            "parentId": 547,
+            "name": "Cawang",
+            "category": "DISTRICT",
+            "latitude": -6.244425,
+            "longitude": 106.86624
+        },
+        {
+            "id": 151,
+            "parentId": 5,
+            "name": "Cempaka Putih",
+            "category": "DISTRICT",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 107,
+            "parentId": 8,
+            "name": "Cengkareng",
+            "category": "DISTRICT",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 5,
+            "parentId": 1,
+            "name": "Central Jakarta",
+            "category": "CITY",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 31,
+            "parentId": 2,
+            "name": "Cilandak",
+            "category": "DISTRICT",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 24,
+            "parentId": 23,
+            "name": "Ciumbuleuit",
+            "category": "DISTRICT",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 26,
+            "parentId": 23,
+            "name": "Dago",
+            "category": "DISTRICT",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 75,
+            "parentId": 39,
+            "name": "Denpasar",
+            "category": "DISTRICT",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 44,
+            "parentId": 2,
+            "name": "Dharmawangsa",
+            "category": "DISTRICT",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 547,
+            "parentId": 1,
+            "name": "East Jakarta",
+            "category": "CITY",
+            "latitude": -6.244425,
+            "longitude": 106.86624
+        },
+        {
+            "id": 13,
+            "parentId": 2,
+            "name": "Gandaria",
+            "category": "DISTRICT",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 64,
+            "parentId": 39,
+            "name": "Gianyar",
+            "category": "DISTRICT",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 11,
+            "parentId": 8,
+            "name": "Grogol",
+            "category": "DISTRICT",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 1,
+            "parentId": null,
+            "name": "Indonesia",
+            "category": "COUNTRY",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 42,
+            "parentId": 39,
+            "name": "Jimbaran",
+            "category": "DISTRICT",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 16,
+            "parentId": 15,
+            "name": "Karawaci",
+            "category": "DISTRICT",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 9,
+            "parentId": 8,
+            "name": "Kebon Jeruk",
+            "category": "DISTRICT",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 14,
+            "parentId": 2,
+            "name": "Kemang",
+            "category": "DISTRICT",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 48,
+            "parentId": 5,
+            "name": "Kemayoran",
+            "category": "DISTRICT",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 28,
+            "parentId": 2,
+            "name": "Kuningan",
+            "category": "DISTRICT",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 86,
+            "parentId": 39,
+            "name": "Legian",
+            "category": "DISTRICT",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 147,
+            "parentId": 23,
+            "name": "Lembang",
+            "category": "DISTRICT",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 12,
+            "parentId": 2,
+            "name": "Mega Kuningan",
+            "category": "DISTRICT",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 74,
+            "parentId": 39,
+            "name": "Mengwi",
+            "category": "DISTRICT",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 17,
+            "parentId": 5,
+            "name": "Menteng",
+            "category": "DISTRICT",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 29,
+            "parentId": 1,
+            "name": "North Jakarta",
+            "category": "CITY",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 45,
+            "parentId": 39,
+            "name": "Nusa Dua",
+            "category": "DISTRICT",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 34,
+            "parentId": 2,
+            "name": "Pancoran",
+            "category": "DISTRICT",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 25,
+            "parentId": 23,
+            "name": "Paskal",
+            "category": "DISTRICT",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 155,
+            "parentId": 39,
+            "name": "Pererenan",
+            "category": "DISTRICT",
+            "latitude": -8.622301,
+            "longitude": 115.137245
+        },
+        {
+            "id": 32,
+            "parentId": 2,
+            "name": "Permata Hijau",
+            "category": "DISTRICT",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 38,
+            "parentId": 5,
+            "name": "PIK",
+            "category": "DISTRICT",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 30,
+            "parentId": 29,
+            "name": "PIK",
+            "category": "DISTRICT",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 7,
+            "parentId": 2,
+            "name": "Pondok Indah",
+            "category": "DISTRICT",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 140,
+            "parentId": 23,
+            "name": "Puntang",
+            "category": "DISTRICT",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 22,
+            "parentId": 8,
+            "name": "Puri Indah",
+            "category": "DISTRICT",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 41,
+            "parentId": 39,
+            "name": "Sanur",
+            "category": "DISTRICT",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 4,
+            "parentId": 2,
+            "name": "SCBD",
+            "category": "DISTRICT",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 108,
+            "parentId": 39,
+            "name": "Seminyak",
+            "category": "DISTRICT",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 36,
+            "parentId": 2,
+            "name": "Senayan",
+            "category": "DISTRICT",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 154,
+            "parentId": 153,
+            "name": "Sentul",
+            "category": "DISTRICT",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 20,
+            "parentId": 15,
+            "name": "Serpong",
+            "category": "DISTRICT",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 3,
+            "parentId": 2,
+            "name": "Setiabudi",
+            "category": "DISTRICT",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 2,
+            "parentId": 1,
+            "name": "South Jakarta",
+            "category": "CITY",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 495,
+            "parentId": 39,
+            "name": "South Kuta",
+            "category": "DISTRICT",
+            "latitude": -8.837002,
+            "longitude": 115.138405
+        },
+        {
+            "id": 18,
+            "parentId": 5,
+            "name": "Sudirman",
+            "category": "DISTRICT",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 27,
+            "parentId": 2,
+            "name": "Sudirman",
+            "category": "DISTRICT",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 150,
+            "parentId": 23,
+            "name": "Sudirman",
+            "category": "DISTRICT",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 46,
+            "parentId": 39,
+            "name": "Tabanan",
+            "category": "DISTRICT",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 68,
+            "parentId": 8,
+            "name": "Taman Sari",
+            "category": "DISTRICT",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 158,
+            "parentId": 39,
+            "name": "Tampaksiring",
+            "category": "DISTRICT",
+            "latitude": -8.493522,
+            "longitude": 115.300064
+        },
+        {
+            "id": 15,
+            "parentId": 1,
+            "name": "Tangerang",
+            "category": "CITY",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 60,
+            "parentId": 2,
+            "name": "Tanjung Barat",
+            "category": "DISTRICT",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 10,
+            "parentId": 2,
+            "name": "Tebet",
+            "category": "DISTRICT",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 6,
+            "parentId": 5,
+            "name": "Thamrin",
+            "category": "DISTRICT",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 35,
+            "parentId": 2,
+            "name": "Thamrin",
+            "category": "DISTRICT",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 131,
+            "parentId": 39,
+            "name": "Ubud",
+            "category": "DISTRICT",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 54,
+            "parentId": 39,
+            "name": "Uluwatu",
+            "category": "DISTRICT",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 70,
+            "parentId": 39,
+            "name": "Umalas",
+            "category": "DISTRICT",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 43,
+            "parentId": 39,
+            "name": "Ungasan",
+            "category": "DISTRICT",
+            "latitude": 0,
+            "longitude": 0
+        },
+        {
+            "id": 8,
+            "parentId": 1,
+            "name": "West Jakarta",
+            "category": "CITY",
+            "latitude": 0,
+            "longitude": 0
+        }
+    ],
+    "errors": null,
+    "_links": null
+}
