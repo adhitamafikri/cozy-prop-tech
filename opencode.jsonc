@@ -3,6 +3,14 @@
     "theme": "opencode",
     "autoupdate": true,
     "mcp": {
+        "sequential-thinking": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "@modelcontextprotocol/server-sequential-thinking"
+            ],
+            "enabled": true
+        },
         "context7": {
             "type": "remote",
             "url": "https://mcp.context7.com/mcp",
@@ -17,14 +25,6 @@
                 "npx",
                 "-y",
                 "chrome-devtools-mcp@latest"
-            ],
-            "enabled": false
-        },
-        "playwright": {
-            "type": "local",
-            "command": [
-                "npx",
-                "@playwright/mcp@latest"
             ],
             "enabled": false
         },
