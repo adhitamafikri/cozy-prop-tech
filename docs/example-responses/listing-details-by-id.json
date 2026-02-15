@@ -1,0 +1,785 @@
+{
+    "apiVersion": "1.0.0",
+    "lang": "en-US",
+    "data": {
+        "id": 1463,
+        "name": "Arlaya Villa",
+        "internalName": "Arlaya Villa",
+        "thumbnailURL": "https://hostaway-platform.s3.us-west-2.amazonaws.com/listing/35050-485221-OAoRl4gK8-UB90FNhNCwXmRYqUzORVynBveStsKXQdw-69896a6f57175",
+        "country": {
+            "id": 1,
+            "parentId": null,
+            "name": "Indonesia",
+            "category": "COUNTRY",
+            "latitude": 0,
+            "longitude": 0
+        },
+        "city": {
+            "id": 39,
+            "parentId": 1,
+            "name": "Bali",
+            "category": "CITY",
+            "latitude": 0,
+            "longitude": 0
+        },
+        "district": {
+            "id": 42,
+            "parentId": 39,
+            "name": "Jimbaran",
+            "category": "DISTRICT",
+            "latitude": 0,
+            "longitude": 0
+        },
+        "areaSquareMeters": 0,
+        "guestCapacity": 4,
+        "numberOfBedrooms": 3,
+        "numberOfBeds": 3,
+        "numberOfBathrooms": 2,
+        "status": "ACTIVE",
+        "description": "Professionally Managed by Kozystay\n\nEscape to your own sanctuary in Jimbaran — a 3BR villa with a private pool, open living spaces, and tropical greenery, just minutes from beaches and vibrant dining spots.\n\nAVAILABLE TO GUESTS:\n+ Digital Check-in\n+ Professionally Cleaned\n+ Hotel Grade Amenities & Fresh Linens\n+ Free High-Speed Wi-Fi (up to 25 Mbps)\n+ Free Access to Netflix\n\nBEST FOR: Family, Staycation\n\nNON-SMOKING\n\nGeneral\n+ 3 bedrooms (111m2) or 4 guests\n+ 2 bathrooms\n+ Amenities & linens; towels & toiletries\n+ High-speed Wi-Fi (up to 25 Mbps)\n+ Free access to streaming services: Netflix & Cable TV\n+ Dining table for 4 persons\n+ Private outdoor swimming pool\n+ Private balcony\n\nMaster Bedroom\n+ Queen size bed\n+ 43'' Smart TV\n+ Free Access to Netflix\n+ Workspace\n+ Wardrobe\n+ Safe\n+ Hairdryer\n+ Iron & ironing board\n+ Balcony\n\nGuest Bedroom 2\n+ Single size bed\n+ Workspace\n+ Wardrobe\n\nGuest Bedroom 3\n+ Single size bed\n+ Workspace\n+ Wardrobe\n\nLiving Space\n+ 43'' Smart TV\n+ Free Access to Netflix\n\nKitchen\n+ Fully equipped kitchen\n+ Microwave\n+ Gas stove: 2 burners\n+ Rice cooker\n+ Refrigerator & freezer\n+ Water dispenser\n+ No condiments available (salt, pepper, oil, etc)\n\nVilla Facilities:\n+ Private Outdoor Swimming Pool\n+ Shared Outdoor Swimming Pool\n+ Free Private Parking Area (1 Car)\n+ Shared Fitness Center\n+ Outdoor Playground\n\nWe believe in creating unforgettable moments for our guests! Whether you seek local tips or a friendly chat, we're here to ensure your stay is tailored to your preferences. Embrace the warmth of our hospitality, and feel free to reach out – your comfort and enjoyment are our top priorities!\n\n+ 9 minutes drive to Garuda Wisnu Kencana Bali\n+ 11 minutes drive to Jimbaran Beach\n+ 13 minutes drive to Udayana University\n+ 13 minutes drive to Rock Bar\n+ 15 minutes drive to New Kuta Golf Bali\n+ 16 minutes drive to Balangan Beach\n+ 16 Minutes drive to Dreamland Beach\n+ 22 minutes drive to Savaya Bali\n+ 29 minutes drive to I Gusti Ngurah Rai International Airport\n+ 30 minutes drive to Bali Nusa Dua Convention Center\n\n+ Guests can drive to nearby cafes & restaurants\n+ Guests can drive to nearest beach\n\n*** IMPORTANT INFORMATION ***\n+ Guests must ensure contact details listed on Airbnb is valid and reachable\n\nSECURITY & COMMUNICATION\n+ Each guests are strictly required to provide a form of identification (ID/passport) prior to check-in.\n+ Communication throughout stay will be via web-based app or WA\n\nVILLA\n+ Free private parking is available \n\nSERVICE\n+ We are always on hand to make your visit as enjoyable as possible and we pride ourselves on going the extra mile so please don't hesitate to contact us. Whether you need help with the Villa, a recommendation or somewhere to leave your suitcase, we are here to assist\n+ Extra cleaning is available with extra charge (600k/cleaning), this includes change of linens, amenities, and 3-4 hour cleaning\n\nLONG TERM STAYS\nStay longer and save up to 45% on your stay\n+ Weekly : 5%\n+ >1 month : Contact us directly",
+        "latitude": -8.79762285,
+        "longitude": 115.14394759,
+        "extraGuestCapacity": 0,
+        "extraGuestFee": 100000,
+        "cleaningFee": 666000,
+        "baseRatePerNight": 2065000,
+        "currencyCode": "IDR",
+        "bestFor": null,
+        "checkinStartTime": "15:00",
+        "checkinEndTime": "00:00",
+        "checkoutTime": "12:00",
+        "minimumReservationNights": 1,
+        "maximumReservationNights": 365,
+        "ratings": null,
+        "images": [
+            {
+                "imageURL": "https://hostaway-platform.s3.us-west-2.amazonaws.com/listing/35050-485221-OAoRl4gK8-UB90FNhNCwXmRYqUzORVynBveStsKXQdw-69896a6f57175",
+                "hostawayCaption": "Private Outdoor Swimming Pool",
+                "roomSection": null,
+                "viewPriority": 1
+            },
+            {
+                "imageURL": "https://hostaway-platform.s3.us-west-2.amazonaws.com/listing/35050-485221-RK4e31-Ybqvx5ONEqIHlRZs7JGQCV0xYartkBxm--5TA-69896347423b6",
+                "hostawayCaption": "Master Bedroom",
+                "roomSection": null,
+                "viewPriority": 2
+            },
+            {
+                "imageURL": "https://hostaway-platform.s3.us-west-2.amazonaws.com/listing/35050-485221-JFU-BqalzXByd9NelDQyXmmQ8RwgwJlnnZ-RLPk7GOk-69898d8881934",
+                "hostawayCaption": "Dining Room",
+                "roomSection": null,
+                "viewPriority": 3
+            },
+            {
+                "imageURL": "https://hostaway-platform.s3.us-west-2.amazonaws.com/listing/35050-485221-grDWCfzIwfMBZk7pjhEudqXJ5HUQDosPzHzsmrl6WA4-69896345197d3",
+                "hostawayCaption": "Master Bathroom",
+                "roomSection": null,
+                "viewPriority": 4
+            },
+            {
+                "imageURL": "https://hostaway-platform.s3.us-west-2.amazonaws.com/listing/35050-485221-8zdJVcI6I5R4QvoVidfS--9flEwkLt8dIbUFQsw6uGYY-69896a6d58d63",
+                "hostawayCaption": "Exterior Villa",
+                "roomSection": null,
+                "viewPriority": 5
+            },
+            {
+                "imageURL": "https://hostaway-platform.s3.us-west-2.amazonaws.com/listing/35050-485221-FOLVVDiC0pg3da5F7a-YKCdW1isZ2UZSkeZ5Mz5EYFo-698963411f0d3",
+                "hostawayCaption": "Living Room",
+                "roomSection": null,
+                "viewPriority": 6
+            },
+            {
+                "imageURL": "https://hostaway-platform.s3.us-west-2.amazonaws.com/listing/35050-485221-IL1xqsWAIcBxUwMAMZSce3J5ROeOy-56jLfkD5Ng9v4-6989633f28c5b",
+                "hostawayCaption": "Living Room",
+                "roomSection": null,
+                "viewPriority": 7
+            },
+            {
+                "imageURL": "https://hostaway-platform.s3.us-west-2.amazonaws.com/listing/35050-485221-Gx---unhmewwridT0SV3zRbV0WN4t663fbx2--5k49EqE-698963378f823",
+                "hostawayCaption": "Master Bedroom",
+                "roomSection": null,
+                "viewPriority": 8
+            },
+            {
+                "imageURL": "https://hostaway-platform.s3.us-west-2.amazonaws.com/listing/35050-485221-b--swuwbqTIn7TzHpJ2Qd2L2O92Efi--Q63WW2ZMHS0gc-69896a6ad1bbe",
+                "hostawayCaption": "Master Bedroom",
+                "roomSection": null,
+                "viewPriority": 9
+            },
+            {
+                "imageURL": "https://hostaway-platform.s3.us-west-2.amazonaws.com/listing/35050-485221-49podI1xK9Rwnbz7ZaZVpEpJ5kCnOfgd1oLmmb-K3WI-69897847ac167",
+                "hostawayCaption": "Master Bedroom",
+                "roomSection": null,
+                "viewPriority": 10
+            },
+            {
+                "imageURL": "https://hostaway-platform.s3.us-west-2.amazonaws.com/listing/35050-485221-nZ--zuwR-NnqRK0jNgo9mkcHbDbDiGotLupojkEAD-Jk-69896a6c701aa",
+                "hostawayCaption": "Master Bedroom",
+                "roomSection": null,
+                "viewPriority": 11
+            },
+            {
+                "imageURL": "https://hostaway-platform.s3.us-west-2.amazonaws.com/listing/35050-485221-w--52OV1HGEMSIpsSDPg-b31aL5xVz2qoX8WUFEEDvJw-6989633cb45f5",
+                "hostawayCaption": "Master Bedroom",
+                "roomSection": null,
+                "viewPriority": 12
+            },
+            {
+                "imageURL": "https://hostaway-platform.s3.us-west-2.amazonaws.com/listing/35050-485221-agLKfzDrPUh7BrSHEg8LrjNSLE4FWnLqT1HfPOptsVs-6989633db64b0",
+                "hostawayCaption": "Living Room",
+                "roomSection": null,
+                "viewPriority": 13
+            },
+            {
+                "imageURL": "https://hostaway-platform.s3.us-west-2.amazonaws.com/listing/35050-485221-zOqFo7oWd1phczvza3tqhxcziwwic--gQyIyBDi6m9aY-6989633571be4",
+                "hostawayCaption": "Master Bathroom",
+                "roomSection": null,
+                "viewPriority": 14
+            },
+            {
+                "imageURL": "https://hostaway-platform.s3.us-west-2.amazonaws.com/listing/35050-485221-j53diRwxRNPaIpZ--1CqaKDTr7zLNVirVt-VoAX91Hbc-698963346ecdd",
+                "hostawayCaption": "Master Bathroom",
+                "roomSection": null,
+                "viewPriority": 15
+            },
+            {
+                "imageURL": "https://hostaway-platform.s3.us-west-2.amazonaws.com/listing/35050-485221--9xosdtmph-AWd7njT-W--r6F1h5hgmU3WxzxUuviH2I-6989633353b0c",
+                "hostawayCaption": "Guest Bedroom",
+                "roomSection": null,
+                "viewPriority": 16
+            },
+            {
+                "imageURL": "https://hostaway-platform.s3.us-west-2.amazonaws.com/listing/35050-485221-02xrxMJLXcKWelLjwOXwvA1-VwtCV9gV1fmrGakyRRM-6989633265166",
+                "hostawayCaption": "Guest Bedroom",
+                "roomSection": null,
+                "viewPriority": 17
+            },
+            {
+                "imageURL": "https://hostaway-platform.s3.us-west-2.amazonaws.com/listing/35050-485221-dA-cnGScP8A9MyzwhaQnkV4pbLzYMCjhCc-FcKBqTL4-698963297c53a",
+                "hostawayCaption": "Guest Bedroom",
+                "roomSection": null,
+                "viewPriority": 18
+            },
+            {
+                "imageURL": "https://hostaway-platform.s3.us-west-2.amazonaws.com/listing/35050-485221-9dbHzHofHXLArcED-gIpEuhLYUf--Pq1H7OA--cmtNuYo-6989632a78780",
+                "hostawayCaption": "Guest Bedroom",
+                "roomSection": null,
+                "viewPriority": 19
+            },
+            {
+                "imageURL": "https://hostaway-platform.s3.us-west-2.amazonaws.com/listing/35050-485221-NIJXZmAXB0VOwayOJklkf5-Knz-S1tG8WQnQJX--fftQ-69896a69df8a4",
+                "hostawayCaption": "Guest Bedroom",
+                "roomSection": null,
+                "viewPriority": 20
+            },
+            {
+                "imageURL": "https://hostaway-platform.s3.us-west-2.amazonaws.com/listing/35050-485221-8eHdKFQQXi8P37zjXTUJMeQFhIp2ioC-eitCvok81zc-6989632b89716",
+                "hostawayCaption": "Guest Bathroom",
+                "roomSection": null,
+                "viewPriority": 21
+            },
+            {
+                "imageURL": "https://hostaway-platform.s3.us-west-2.amazonaws.com/listing/35050-485221-h-4ymgsJkCsw5-at26oRQ31gXgnbMWxWinQztISF6lk-6989632ed7bb4",
+                "hostawayCaption": "Guest Bathroom",
+                "roomSection": null,
+                "viewPriority": 22
+            },
+            {
+                "imageURL": "https://hostaway-platform.s3.us-west-2.amazonaws.com/listing/35050-485221-6X2m0MuSiGp03xD-GZ8yOKv75HZrognrm--ctnDtHRiw-698963309a9e7",
+                "hostawayCaption": "Guest Bedroom",
+                "roomSection": null,
+                "viewPriority": 23
+            },
+            {
+                "imageURL": "https://hostaway-platform.s3.us-west-2.amazonaws.com/listing/35050-485221-2YxmgtGCrsKTUO7SmMr--FXsAuPrDms2IiWuM50GhnXM-6989632dd9a3e",
+                "hostawayCaption": "Guest Bathroom",
+                "roomSection": null,
+                "viewPriority": 24
+            },
+            {
+                "imageURL": "https://hostaway-platform.s3.us-west-2.amazonaws.com/listing/35050-485221-axUbmL9Wwn67Prmgz0EX4vjDZKGXnDGZh9Kg1kJVjVA-69896328624c1",
+                "hostawayCaption": "Dining Room",
+                "roomSection": null,
+                "viewPriority": 25
+            },
+            {
+                "imageURL": "https://hostaway-platform.s3.us-west-2.amazonaws.com/listing/35050-485221-Syilzj0FzjNiocDLjyDYIp3UOS6aROu-GE8zqexJhE4-6989632759441",
+                "hostawayCaption": "Dining Room",
+                "roomSection": null,
+                "viewPriority": 26
+            },
+            {
+                "imageURL": "https://hostaway-platform.s3.us-west-2.amazonaws.com/listing/35050-485221-e4yTI9fC6-yvrqHnb6TD-qXYcM6-vQTKAs6UrAnI3z0-6989632556ac5",
+                "hostawayCaption": "Dining Room",
+                "roomSection": null,
+                "viewPriority": 27
+            },
+            {
+                "imageURL": "https://hostaway-platform.s3.us-west-2.amazonaws.com/listing/35050-485221-gv--gtcO--ExWeKsoQL71TrcXnBU41IAnOolguixTuMeA-69896a68e5cfb",
+                "hostawayCaption": "Kitchen",
+                "roomSection": null,
+                "viewPriority": 28
+            },
+            {
+                "imageURL": "https://hostaway-platform.s3.us-west-2.amazonaws.com/listing/35050-485221-xHdnF0NamTDhXPu5us8YweR0IhNpFdyYYa7ObxnI-jQ-698963206bca1",
+                "hostawayCaption": "Kitchen",
+                "roomSection": null,
+                "viewPriority": 29
+            },
+            {
+                "imageURL": "https://hostaway-platform.s3.us-west-2.amazonaws.com/listing/35050-485221-ayKQUHLnawUEHUpzX9a3QKXzJTpYlN0v6gAbyQl3LJ4-69896a67e11d0",
+                "hostawayCaption": "Private Outdoor Swimming Pool",
+                "roomSection": null,
+                "viewPriority": 30
+            },
+            {
+                "imageURL": "https://hostaway-platform.s3.us-west-2.amazonaws.com/listing/35050-485221-xdlehwsgBGh3eElBTIP--nb2Qydi4Chtx2bP--IoBnoGo-6989631e8ed72",
+                "hostawayCaption": "Private Outdoor Swimming Pool",
+                "roomSection": null,
+                "viewPriority": 31
+            },
+            {
+                "imageURL": "https://hostaway-platform.s3.us-west-2.amazonaws.com/listing/35050-485221-TVDAcMUnVoTd8qezbboiF4Gjknh-x-qN5C99EZo8xn0-69896321f06a5",
+                "hostawayCaption": "Kitchen",
+                "roomSection": null,
+                "viewPriority": 32
+            },
+            {
+                "imageURL": "https://hostaway-platform.s3.us-west-2.amazonaws.com/listing/35050-485221-e0vBzfRf6hs95-ZLVQ-izMP2bHpJpXvt3LkuzlngeGE-698963237d30c",
+                "hostawayCaption": "Kitchen",
+                "roomSection": null,
+                "viewPriority": 33
+            },
+            {
+                "imageURL": "https://hostaway-platform.s3.us-west-2.amazonaws.com/listing/35050-485221-BIyYakChlzcFR33OsLJIKguD51gJCuTmYwl--E8lePtY-69896a668b15d",
+                "hostawayCaption": "Exterior Villa",
+                "roomSection": null,
+                "viewPriority": 34
+            },
+            {
+                "imageURL": "https://hostaway-platform.s3.us-west-2.amazonaws.com/listing/35050-485221-HRcIfrhG4QETIoTCqw24-yRRA0Rafo1T80scRpzZ5Ow-69896a65558fc",
+                "hostawayCaption": "Exterior Villa",
+                "roomSection": null,
+                "viewPriority": 35
+            },
+            {
+                "imageURL": "https://hostaway-platform.s3.us-west-2.amazonaws.com/listing/35050-485221-wNpPB7HHNJruxzxz3Xl-BlAD8BpaL-p8gQ-w3VlJE3Y-6989631a92a2b",
+                "hostawayCaption": "Shared Outdoor Swimming Pool",
+                "roomSection": null,
+                "viewPriority": 36
+            },
+            {
+                "imageURL": "https://hostaway-platform.s3.us-west-2.amazonaws.com/listing/35050-485221-FozIVGjP674e62VgRyR-C5OcHOJ84oZwJwxs1ZbU-tI-698963196fd43",
+                "hostawayCaption": "Shared Outdoor Swimming Pool",
+                "roomSection": null,
+                "viewPriority": 37
+            },
+            {
+                "imageURL": "https://hostaway-platform.s3.us-west-2.amazonaws.com/listing/35050-485221-TQ--SnXbwH6lQXN3--AtxZRuBahay8UdFBTgvKi6BWGtE-698963186ae6b",
+                "hostawayCaption": "Fitness Center",
+                "roomSection": null,
+                "viewPriority": 38
+            },
+            {
+                "imageURL": "https://hostaway-platform.s3.us-west-2.amazonaws.com/listing/35050-485221-R1FV9DSSlpKxnDiyL5bZwdkd5V6EHU-coI--OeUrwZls-69896316f21aa",
+                "hostawayCaption": "Exterior Villa",
+                "roomSection": null,
+                "viewPriority": 39
+            },
+            {
+                "imageURL": "https://hostaway-platform.s3.us-west-2.amazonaws.com/listing/35050-485221-OcUhS-GHQZatcgaogdjsGYrxXIXpw4YmelxsLkXRIrc-69896a63c4bf6",
+                "hostawayCaption": "Exterior Villa",
+                "roomSection": null,
+                "viewPriority": 40
+            }
+        ],
+        "notes": [
+            {
+                "title": "IMPORTANT INFORMATION",
+                "description": null,
+                "list": [
+                    "Guests must ensure contact details listed on Airbnb is valid and reachable"
+                ]
+            },
+            {
+                "title": "LONG TERM STAYS",
+                "description": "Stay longer and save up to 45% on your stay",
+                "list": [
+                    "Weekly : 5%",
+                    ">1 month : Contact us directly"
+                ]
+            },
+            {
+                "title": "SECURITY & COMMUNICATION",
+                "description": null,
+                "list": [
+                    "Each guests are strictly required to provide a form of identification (ID/passport) prior to check-in.",
+                    "Communication throughout stay will be via web-based app or WA"
+                ]
+            },
+            {
+                "title": "SERVICE",
+                "description": null,
+                "list": [
+                    "We are always on hand to make your visit as enjoyable as possible and we pride ourselves on going the extra mile so please don't hesitate to contact us. Whether you need help with the Villa, a recommendation or somewhere to leave your suitcase, we are here to assist",
+                    "Extra cleaning is available with extra charge (600k/cleaning), this includes change of linens, amenities, and 3-4 hour cleaning"
+                ]
+            },
+            {
+                "title": "VILLA",
+                "description": null,
+                "list": [
+                    "Free private parking is available "
+                ]
+            }
+        ],
+        "nearbyPlaces": null,
+        "amenities": [
+            {
+                "id": 733,
+                "name": "Air conditioning",
+                "icon": "https://storage.googleapis.com/kz-prod-image-bucket/check-o-circle.svg",
+                "category": "GENERAL",
+                "viewPriority": 5,
+                "hostawayId": 4
+            },
+            {
+                "id": 696,
+                "name": "Baby crib",
+                "icon": "https://storage.googleapis.com/kz-prod-image-bucket/check-o-circle.svg",
+                "category": "CHILDREN",
+                "viewPriority": 0,
+                "hostawayId": 66
+            },
+            {
+                "id": 682,
+                "name": "Shower gel",
+                "icon": "https://storage.googleapis.com/kz-prod-image-bucket/check-o-circle.svg",
+                "category": "",
+                "viewPriority": 0,
+                "hostawayId": 341
+            },
+            {
+                "id": 806,
+                "name": "Resort",
+                "icon": "https://storage.googleapis.com/kz-prod-image-bucket/check-o-circle.svg",
+                "category": "",
+                "viewPriority": 0,
+                "hostawayId": 0
+            },
+            {
+                "id": 591,
+                "name": "Bidet",
+                "icon": "https://storage.googleapis.com/kz-prod-image-bucket/check-o-circle.svg",
+                "category": "BATHROOM",
+                "viewPriority": 3,
+                "hostawayId": 64
+            },
+            {
+                "id": 679,
+                "name": "Blender",
+                "icon": "https://storage.googleapis.com/kz-prod-image-bucket/check-o-circle.svg",
+                "category": "",
+                "viewPriority": 0,
+                "hostawayId": 355
+            },
+            {
+                "id": 659,
+                "name": "Safe",
+                "icon": "https://storage.googleapis.com/kz-prod-image-bucket/check-o-circle.svg",
+                "category": "",
+                "viewPriority": 0,
+                "hostawayId": 317
+            },
+            {
+                "id": 558,
+                "name": "Shampoo",
+                "icon": "https://storage.googleapis.com/kz-prod-image-bucket/check-o-circle.svg",
+                "category": "BATHROOM",
+                "viewPriority": 4,
+                "hostawayId": 30
+            },
+            {
+                "id": 818,
+                "name": "Cleaning before checkout",
+                "icon": "https://storage.googleapis.com/kz-prod-image-bucket/check-o-circle.svg",
+                "category": "",
+                "viewPriority": 0,
+                "hostawayId": 0
+            },
+            {
+                "id": 823,
+                "name": "Long term stays allowed",
+                "icon": "https://storage.googleapis.com/kz-prod-image-bucket/check-o-circle.svg",
+                "category": "",
+                "viewPriority": 0,
+                "hostawayId": 0
+            },
+            {
+                "id": 824,
+                "name": "Luggage dropoff allowed",
+                "icon": "https://storage.googleapis.com/kz-prod-image-bucket/check-o-circle.svg",
+                "category": "",
+                "viewPriority": 0,
+                "hostawayId": 0
+            },
+            {
+                "id": 856,
+                "name": "Swimming pool",
+                "icon": "https://storage.googleapis.com/kz-prod-image-bucket/check-o-circle.svg",
+                "category": "",
+                "viewPriority": 0,
+                "hostawayId": 0
+            },
+            {
+                "id": 860,
+                "name": "Kitchen",
+                "icon": "https://storage.googleapis.com/kz-prod-image-bucket/check-o-circle.svg",
+                "category": "",
+                "viewPriority": 0,
+                "hostawayId": 0
+            },
+            {
+                "id": 867,
+                "name": "Gym",
+                "icon": "https://storage.googleapis.com/kz-prod-image-bucket/check-o-circle.svg",
+                "category": "",
+                "viewPriority": 0,
+                "hostawayId": 0
+            },
+            {
+                "id": 672,
+                "name": "Sound system",
+                "icon": "https://storage.googleapis.com/kz-prod-image-bucket/check-o-circle.svg",
+                "category": "ENTERTAINMENT",
+                "viewPriority": 3,
+                "hostawayId": 35
+            },
+            {
+                "id": 683,
+                "name": "Stove",
+                "icon": "https://storage.googleapis.com/kz-prod-image-bucket/check-o-circle.svg",
+                "category": "KITCHEN",
+                "viewPriority": 3,
+                "hostawayId": 68
+            },
+            {
+                "id": 740,
+                "name": "Suitable for children",
+                "icon": "https://storage.googleapis.com/kz-prod-image-bucket/check-o-circle.svg",
+                "category": "CHILDREN",
+                "viewPriority": 1,
+                "hostawayId": 48
+            },
+            {
+                "id": 666,
+                "name": "Suitable for infants",
+                "icon": "https://storage.googleapis.com/kz-prod-image-bucket/check-o-circle.svg",
+                "category": "CHILDREN",
+                "viewPriority": 2,
+                "hostawayId": 49
+            },
+            {
+                "id": 527,
+                "name": "Toaster",
+                "icon": "https://storage.googleapis.com/kz-prod-image-bucket/check-o-circle.svg",
+                "category": "KITCHEN",
+                "viewPriority": 5,
+                "hostawayId": 56
+            },
+            {
+                "id": 551,
+                "name": "TV",
+                "icon": "https://storage.googleapis.com/kz-prod-image-bucket/check-o-circle.svg",
+                "category": "ENTERTAINMENT",
+                "viewPriority": 1,
+                "hostawayId": 34
+            },
+            {
+                "id": 541,
+                "name": "Freezer",
+                "icon": "https://storage.googleapis.com/kz-prod-image-bucket/check-o-circle.svg",
+                "category": "",
+                "viewPriority": 0,
+                "hostawayId": 357
+            },
+            {
+                "id": 643,
+                "name": "Private entrance",
+                "icon": "https://storage.googleapis.com/kz-prod-image-bucket/check-o-circle.svg",
+                "category": "",
+                "viewPriority": 0,
+                "hostawayId": 102
+            },
+            {
+                "id": 686,
+                "name": "Cleaning products",
+                "icon": "https://storage.googleapis.com/kz-prod-image-bucket/check-o-circle.svg",
+                "category": "",
+                "viewPriority": 0,
+                "hostawayId": 337
+            },
+            {
+                "id": 622,
+                "name": "Clothing storage",
+                "icon": "https://storage.googleapis.com/kz-prod-image-bucket/check-o-circle.svg",
+                "category": "",
+                "viewPriority": 0,
+                "hostawayId": 342
+            },
+            {
+                "id": 538,
+                "name": "Coffee",
+                "icon": "https://storage.googleapis.com/kz-prod-image-bucket/check-o-circle.svg",
+                "category": "",
+                "viewPriority": 0,
+                "hostawayId": 356
+            },
+            {
+                "id": 662,
+                "name": "Coffee/tea maker",
+                "icon": "https://storage.googleapis.com/kz-prod-image-bucket/check-o-circle.svg",
+                "category": "KITCHEN",
+                "viewPriority": 4,
+                "hostawayId": 61
+            },
+            {
+                "id": 617,
+                "name": "Cooking basics",
+                "icon": "https://storage.googleapis.com/kz-prod-image-bucket/check-o-circle.svg",
+                "category": "",
+                "viewPriority": 0,
+                "hostawayId": 106
+            },
+            {
+                "id": 546,
+                "name": "Dining table",
+                "icon": "https://storage.googleapis.com/kz-prod-image-bucket/check-o-circle.svg",
+                "category": "",
+                "viewPriority": 0,
+                "hostawayId": 294
+            },
+            {
+                "id": 505,
+                "name": "Drying rack for clothing",
+                "icon": "https://storage.googleapis.com/kz-prod-image-bucket/check-o-circle.svg",
+                "category": "",
+                "viewPriority": 0,
+                "hostawayId": 343
+            },
+            {
+                "id": 724,
+                "name": "Essentials",
+                "icon": "https://storage.googleapis.com/kz-prod-image-bucket/check-o-circle.svg",
+                "category": "GENERAL",
+                "viewPriority": 2,
+                "hostawayId": 29
+            },
+            {
+                "id": 640,
+                "name": "Fire Extinguisher",
+                "icon": "https://storage.googleapis.com/kz-prod-image-bucket/check-o-circle.svg",
+                "category": "SAFETY",
+                "viewPriority": 3,
+                "hostawayId": 28
+            },
+            {
+                "id": 561,
+                "name": "First aid kit",
+                "icon": "https://storage.googleapis.com/kz-prod-image-bucket/check-o-circle.svg",
+                "category": "SAFETY",
+                "viewPriority": 0,
+                "hostawayId": 27
+            },
+            {
+                "id": 581,
+                "name": "Hair Dryer",
+                "icon": "https://storage.googleapis.com/kz-prod-image-bucket/check-o-circle.svg",
+                "category": "BATHROOM",
+                "viewPriority": 6,
+                "hostawayId": 17
+            },
+            {
+                "id": 678,
+                "name": "Hangers",
+                "icon": "https://storage.googleapis.com/kz-prod-image-bucket/check-o-circle.svg",
+                "category": "GENERAL",
+                "viewPriority": 0,
+                "hostawayId": 31
+            },
+            {
+                "id": 657,
+                "name": "High chair",
+                "icon": "https://storage.googleapis.com/kz-prod-image-bucket/check-o-circle.svg",
+                "category": "",
+                "viewPriority": 0,
+                "hostawayId": 73
+            },
+            {
+                "id": 711,
+                "name": "Hot water",
+                "icon": "https://storage.googleapis.com/kz-prod-image-bucket/check-o-circle.svg",
+                "category": "",
+                "viewPriority": 0,
+                "hostawayId": 101
+            },
+            {
+                "id": 610,
+                "name": "Internet",
+                "icon": "https://storage.googleapis.com/kz-prod-image-bucket/check-o-circle.svg",
+                "category": "COMMUNICATIONS",
+                "viewPriority": 0,
+                "hostawayId": 2
+            },
+            {
+                "id": 574,
+                "name": "Iron",
+                "icon": "https://storage.googleapis.com/kz-prod-image-bucket/check-o-circle.svg",
+                "category": "LAUNDRY",
+                "viewPriority": 3,
+                "hostawayId": 32
+            },
+            {
+                "id": 601,
+                "name": "Kitchen utensils",
+                "icon": "https://storage.googleapis.com/kz-prod-image-bucket/check-o-circle.svg",
+                "category": "",
+                "viewPriority": 0,
+                "hostawayId": 74
+            },
+            {
+                "id": 563,
+                "name": "Laptop Friendly workspace",
+                "icon": "https://storage.googleapis.com/kz-prod-image-bucket/check-o-circle.svg",
+                "category": "GENERAL",
+                "viewPriority": 4,
+                "hostawayId": 33
+            },
+            {
+                "id": 737,
+                "name": "Linens",
+                "icon": "https://storage.googleapis.com/kz-prod-image-bucket/check-o-circle.svg",
+                "category": "GENERAL",
+                "viewPriority": 3,
+                "hostawayId": 54
+            },
+            {
+                "id": 728,
+                "name": "Microwave",
+                "icon": "https://storage.googleapis.com/kz-prod-image-bucket/check-o-circle.svg",
+                "category": "KITCHEN",
+                "viewPriority": 1,
+                "hostawayId": 58
+            },
+            {
+                "id": 509,
+                "name": "Refrigerator",
+                "icon": "https://storage.googleapis.com/kz-prod-image-bucket/check-o-circle.svg",
+                "category": "KITCHEN",
+                "viewPriority": 0,
+                "hostawayId": 69
+            },
+            {
+                "id": 703,
+                "name": "Rice maker",
+                "icon": "https://storage.googleapis.com/kz-prod-image-bucket/check-o-circle.svg",
+                "category": "",
+                "viewPriority": 0,
+                "hostawayId": 359
+            },
+            {
+                "id": 520,
+                "name": "Wireless",
+                "icon": "https://storage.googleapis.com/kz-prod-image-bucket/check-o-circle.svg",
+                "category": "COMMUNICATIONS",
+                "viewPriority": 0,
+                "hostawayId": 3
+            }
+        ],
+        "facilities": [
+            {
+                "id": 267,
+                "name": "Gym",
+                "icon": "https://storage.googleapis.com/kz-stg-image-bucket/check-o-circle.svg",
+                "category": "GENERAL",
+                "viewPriority": 0,
+                "hostawayId": 9
+            },
+            {
+                "id": 255,
+                "name": "Laundromat",
+                "icon": "https://storage.googleapis.com/kz-stg-image-bucket/check-o-circle.svg",
+                "category": "",
+                "viewPriority": 0,
+                "hostawayId": 115
+            },
+            {
+                "id": 224,
+                "name": "Long term stays allowed",
+                "icon": "https://storage.googleapis.com/kz-stg-image-bucket/check-o-circle.svg",
+                "category": "",
+                "viewPriority": 0,
+                "hostawayId": 202
+            },
+            {
+                "id": 271,
+                "name": "Luggage dropoff allowed",
+                "icon": "https://storage.googleapis.com/kz-stg-image-bucket/check-o-circle.svg",
+                "category": "",
+                "viewPriority": 0,
+                "hostawayId": 201
+            },
+            {
+                "id": 209,
+                "name": "Cleaning before checkout",
+                "icon": "https://storage.googleapis.com/kz-stg-image-bucket/check-o-circle.svg",
+                "category": "",
+                "viewPriority": 0,
+                "hostawayId": 203
+            },
+            {
+                "id": 241,
+                "name": "Kitchen",
+                "icon": "https://storage.googleapis.com/kz-stg-image-bucket/check-o-circle.svg",
+                "category": "GENERAL",
+                "viewPriority": 0,
+                "hostawayId": 7
+            },
+            {
+                "id": 215,
+                "name": "Free parking",
+                "icon": "https://storage.googleapis.com/kz-stg-image-bucket/check-o-circle.svg",
+                "category": "PARKING",
+                "viewPriority": 0,
+                "hostawayId": 39
+            },
+            {
+                "id": 274,
+                "name": "Resort",
+                "icon": "https://storage.googleapis.com/kz-stg-image-bucket/check-o-circle.svg",
+                "category": "",
+                "viewPriority": 0,
+                "hostawayId": 182
+            },
+            {
+                "id": 299,
+                "name": "Swimming pool",
+                "icon": "https://storage.googleapis.com/kz-stg-image-bucket/check-o-circle.svg",
+                "category": "POOL",
+                "viewPriority": 0,
+                "hostawayId": 6
+            }
+        ],
+        "timezone": "Asia/Makassar",
+        "theSpace": "",
+        "neighborhood": null,
+        "neighborhoodDescription": null,
+        "hostawayId": 485221,
+        "buildingId": 865,
+        "businessUnitId": 1,
+        "source": "HOSTAWAY",
+        "sourceId": "485221"
+    },
+    "errors": null,
+    "_links": null
+}

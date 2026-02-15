@@ -116,4 +116,4 @@ We have multiple services here in this project. In order to know about which por
 | api-gateway | 8080 |
 | auth-service | 8081 |
 | listings-service | 8082 |
-| chat-service | 8083 |
+| customer-support-service | 8083 |

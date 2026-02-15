@@ -12,7 +12,7 @@ Add these to your `/etc/hosts`
 127.0.0.1 api.cozy-prop.local
 127.0.0.1 api.cozy-prop-auth.local
 127.0.0.1 api.cozy-prop-listings.local
-127.0.0.1 api.cozy-prop-chat.local
+127.0.0.1 api.cozy-prop-customer-support.local
 ```
 
 You need to have these things installed on your machine, in order to run this project locally
@@ -39,7 +39,7 @@ This repository contains several sub-projects
 - **api-gateway**: client request entry point, request routing, auth checking
 - **auth-service**: user registration, user login
 - **listing-service**: property listing service
-- **chat-service**: simple live chat service, connecting customers to our cs agents
+- **customer-support-service**: customer support service, handles simple complaint management and live chat
 
 ## Running the Project Locally
 
