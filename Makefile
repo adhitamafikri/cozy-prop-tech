@@ -20,3 +20,8 @@ start-api:
 .PHONY: stop-api
 stop-api:
 	docker compose -f docker-compose.yml down api
+
+.PHONY: connect-db
+connect-db:
+	chmod +x ./scripts/connect-db.sh
+	@./scripts/connect-db.sh $(ARGS)

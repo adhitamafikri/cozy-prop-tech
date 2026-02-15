@@ -12,13 +12,32 @@ services:
       - ./backend/api/.env
     networks:
       - cozy-network
+    depends_on:
+      - postgres
+      - redis
 
   postgres:
-    image:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: cozy_listings
+      POSTGRES_USER: cozy
+      POSTGRES_PASSWORD: cozy123
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - cozy-network
 
   redis:
-    image:
+    image: redis:7-alpine
+    volumes:
+      - redis_data:/data
+    networks:
+      - cozy-network
 
 networks:
   cozy-network:
     driver: bridge
+
+volumes:
+  postgres_data:
+  redis_data:
