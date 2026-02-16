@@ -40,7 +40,7 @@ Our backend **api** is responsible for handling these domains:
 
 - Programming Language: Go v1.2
 - Routing Framework: Gin (github.com/gin-gonic/gin)
-- Database: PostgreSQL v17 + sqlc (https://sqlc.dev/)
+- Database: PostgreSQL v17 + sqlx (https://github.com/jmoiron/sqlx)
 - Caching: Redis v8 + Go-Redis (https://github.com/redis/go-redis)
 - Logging: slog (https://pkg.go.dev/golang.org/x/exp/slog)
 - Auth: JWT (https://github.com/golang-jwt/jwt)
