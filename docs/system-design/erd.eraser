@@ -1,0 +1,135 @@
+title Cozy Prop ERD
+notation chen
+users [icon: user, color: blue] {
+  id int pk
+  name varchar(255) NOT NULL
+  email varchar(255) UNIQUE NOT NULL
+  phone varchar(255) UNIQUE NOT NULL
+  password TEXT NOT NULL
+  created_at timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP
+  updated_at timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP
+  deleted_at timestamptz
+}
+
+roles [color: blue] {
+  id int pk
+  name varchar(255) UNIQUE NOT NULL
+  description TEXT
+  created_at timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP
+  updated_at timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP
+  deleted_at timestamptz
+}
+
+permissions [color: blue] {
+  id int pk
+  name varchar(255) UNIQUE NOT NULL
+  description TEXT
+  created_at timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP
+  updated_at timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP
+  deleted_at timestamptz
+}
+
+user_roles [color: blue] {
+  user_id int FK REFERENCES users(id) ON DELETE CASCADE
+  role_id int FK REFERENCES roles(id) ON DELETE CASCADE
+//   PRIMARY KEY(user_id, role_id)
+}
+
+role_permissions [color: blue] {
+  role_id int FK REFERENCES roles(id) ON DELETE CASCADE
+  permission_id int FK REFERENCES permissions(id) ON DELETE CASCADE
+//   PRIMARY KEY(role_id, permission_id)
+}
+
+locations [color: orange] {
+  id int pk
+  parent_id int
+  name varchar(255) NOT NULL
+  category varchar(100) NOT NULL // COUNTRY, DISTRICT, CITY
+  latitude NUMERIC(9,6) DEFAULT 0
+  longitude NUMERIC(9,6) DEFAULT 0
+  created_at timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP
+  updated_at timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP
+  deleted_at timestamptz
+}
+
+property_types [color: red] {
+  id int pk
+  name varchar(255) UNIQUE NOT NULL
+  description TEXT
+  created_at timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP
+  updated_at timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP
+  deleted_at timestamptz
+}
+
+properties [color: red] {
+  id int pk
+  owner_id int FK REFERENCES users(id) ON DELETE CASCADE
+  property_type_id int FK REFERENCES property_types(id) ON DELETE CASCADE
+  location_id int FK REFERENCES locations(id) ON DELETE CASCADE
+  address TEXT NOT NULL
+  latitude NUMERIC(9,6) NOT NULL DEFAULT 0
+  longitude NUMERIC(9,6) NOT NULL DEFAULT 0
+  area_sqm DOUBLE PRECISION DEFAULT 0
+  building_amenities JSONB
+  created_at timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP
+  updated_at timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP
+  deleted_at timestamptz
+}
+
+listings [color: purple] {
+  id int pk
+  property_id FK REFERENCES properties(id) ON DELETE CASCADE
+  title varchar(255) NOT NULL
+  description TEXT
+  base_price NUMERIC(15, 2)
+  status varchar(20) // 'active', 'inactive'
+  guest_capacity int NOT NULL DEFAULT 0
+  minimum_reservation_nights int NOT NULL
+  maximum_reservation_nights int NOT NULL
+  cleaning_fee NUMERIC(15, 2)
+  extra_guest_capacity INT DEFAULT 0
+  extra_guest_fee NUMERIC(15, 2)
+  num_beds INT NOT NULL
+  num_bathrooms INT NOT NULL
+  num_bedrooms INT NOT NULL
+  amenities JSONB
+  created_at timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP
+  updated_at timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP
+  deleted_at timestamptz
+}
+
+listing_availability [color: purple] {
+  id int pk
+  listing_id int fk REFERENCES listings(id) ON DELETE CASCADE
+  date DATE NOT NULL
+  status varchar(20) // available, booked, blocked
+  price_override NUMERIC(15, 2)
+  created_at timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP
+  updated_at timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP
+  deleted_at timestamptz
+}
+
+reservations [color: orange] {
+  id int pk
+  listing_id int fk REFERENCES listings(id) ON DELETE CASCADE
+  user_id int fk REFERENCES users(id) ON DELETE CASCADE
+  check_in DATE NOT NULL
+  check_out DATE NOT NULL
+  total_price NUMERIC(15, 2)
+  num_guests int NOT NULL
+  status varchar(50) NOT NULL DEFAULT 'pending' // pending, confirmed, cancelled
+  created_at timestamptz NOT NULL
+}
+
+users.id <> user_roles.user_id
+roles.id <> user_roles.role_id
+roles.id <> role_permissions.role_id
+permissions.id <> role_permissions.permission_id
+properties.property_type_id > property_types.id
+properties.owner_id > users.id
+properties.location_id > locations.id
+listings.property_id > properties.id
+listing_availability.listing_id > listings.id
+reservations.listing_id > listings.id
+reservations.user_id > users.id
