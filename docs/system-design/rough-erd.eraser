@@ -62,6 +62,18 @@ property_types [color: red] {
   deleted_at timestamptz
 }
 
+images [color: purple] {
+  id int pk
+  entity_type varchar(50) NOT NULL // property, listing
+  entity_id int NOT NULL // property_id or listing_id
+  url varchar(2048) NOT NULL // stores the full path
+  is_primary boolean NOT NULL DEFAULT FALSE
+  order int NOT NULL DEFAULT 0 // ordering
+  created_at timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP
+
+  // create index on (entity_type, entity_id)
+}
+
 properties [color: red] {
   id int pk
   owner_id int FK REFERENCES users(id) ON DELETE CASCADE
