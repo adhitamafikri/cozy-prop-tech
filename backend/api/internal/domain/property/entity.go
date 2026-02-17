@@ -1,4 +1,4 @@
-package entity
+package property
 
 import (
 	"encoding/json"
@@ -27,6 +27,16 @@ type PropertyType struct {
 	CreatedAt   time.Time  `json:"created_at" db:"created_at"`
 	UpdatedAt   time.Time  `json:"updated_at" db:"updated_at"`
 	DeletedAt   *time.Time `json:"deleted_at,omitempty" db:"deleted_at"`
+}
+
+type PropertyImage struct {
+	ID         int64     `json:"id" db:"id"`
+	PropertyID int64     `json:"property_id" db:"property_id"`
+	URL        string    `json:"url" db:"url"`
+	IsPrimary  bool      `json:"is_primary" db:"is_primary"`
+	Order      int       `json:"order" db:"order"`
+	CreatedAt  time.Time `json:"created_at" db:"created_at"`
+	UpdatedAt  time.Time `json:"updated_at" db:"updated_at"`
 }
 
 type PropertyWithDetails struct {

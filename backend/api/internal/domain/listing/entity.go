@@ -1,4 +1,4 @@
-package entity
+package listing
 
 import (
 	"encoding/json"
@@ -36,6 +36,16 @@ type ListingAvailability struct {
 	CreatedAt     time.Time  `json:"created_at" db:"created_at"`
 	UpdatedAt     time.Time  `json:"updated_at" db:"updated_at"`
 	DeletedAt     *time.Time `json:"deleted_at,omitempty" db:"deleted_at"`
+}
+
+type ListingImage struct {
+	ID        int64     `json:"id" db:"id"`
+	ListingID int64     `json:"listing_id" db:"listing_id"`
+	URL       string    `json:"url" db:"url"`
+	IsPrimary bool      `json:"is_primary" db:"is_primary"`
+	Order     int       `json:"order" db:"order"`
+	CreatedAt time.Time `json:"created_at" db:"created_at"`
+	UpdatedAt time.Time `json:"updated_at" db:"updated_at"`
 }
 
 type ListingWithDetails struct {
