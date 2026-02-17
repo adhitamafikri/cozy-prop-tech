@@ -62,18 +62,6 @@ property_types [color: red] {
   deleted_at timestamptz
 }
 
-images [color: purple] {
-  id int pk
-  entity_type varchar(50) NOT NULL // property, listing
-  entity_id int NOT NULL // property_id or listing_id
-  url varchar(2048) NOT NULL // stores the full path
-  is_primary boolean NOT NULL DEFAULT FALSE
-  order int NOT NULL DEFAULT 0 // ordering
-  created_at timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP
-
-  // create index on (entity_type, entity_id)
-}
-
 properties [color: red] {
   id int pk
   owner_id int FK REFERENCES users(id) ON DELETE CASCADE
@@ -87,6 +75,18 @@ properties [color: red] {
   created_at timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP
   updated_at timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP
   deleted_at timestamptz
+}
+
+property_images [color: purple] {
+  id int pk
+  property_id int FK REFERENCES properties(id) ON DELETE CASCADE
+  url varchar(2048) NOT NULL // stores the full path
+  is_primary boolean NOT NULL DEFAULT FALSE
+  order int NOT NULL DEFAULT 0 // ordering
+  created_at timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP
+  updated_at timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP
+
+  // UNIQUE (property_id, order) -> prevents images having same order value
 }
 
 listings [color: purple] {
@@ -109,6 +109,18 @@ listings [color: purple] {
   created_at timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP
   updated_at timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP
   deleted_at timestamptz
+}
+
+listing_images [color: purple] {
+  id int pk
+  listing_id int FK REFERENCES listings(id) ON DELETE CASCADE
+  url varchar(2048) NOT NULL // stores the full path
+  is_primary boolean NOT NULL DEFAULT FALSE
+  order int NOT NULL DEFAULT 0 // ordering
+  created_at timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP
+  updated_at timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP
+
+  // UNIQUE (listing_id, order) -> prevents images having same order value
 }
 
 listing_availability [color: purple] {
@@ -141,7 +153,9 @@ permissions.id <> role_permissions.permission_id
 properties.property_type_id > property_types.id
 properties.owner_id > users.id
 properties.location_id > locations.id
+property_images.property_id > properties.id
 listings.property_id > properties.id
 listing_availability.listing_id > listings.id
+listing_images.listing_id > listings.id
 reservations.listing_id > listings.id
 reservations.user_id > users.id
