@@ -13,6 +13,16 @@ start-admin:
 	bun -v
 	bun run dev
 
+.PHONY: migrate-up
+migrate-up:
+	@chmod +x ./scripts/migrate.sh
+	@./scripts/migrate.sh up
+
+.PHONY: migrate-down
+migrate-down:
+	@chmod +x ./scripts/migrate.sh
+	@./scripts/migrate.sh down
+
 .PHONY: up
 up:
 	docker compose -f docker-compose.yml up -d
@@ -38,3 +48,8 @@ api-logs:
 connect-db:
 	chmod +x ./scripts/connect-db.sh
 	@./scripts/connect-db.sh $(ARGS)
+
+.PHONY: connect-psql
+connect-psql:
+	chmod +x ./scripts/connect-psql.sh
+	@./scripts/connect-psql.sh

@@ -45,6 +45,7 @@ func LoadConfig() (*Config, error) {
 			Name:     GetValue("DB_NAME", "cozy_prop_db"),
 			User:     GetValue("DB_USER", "cozy"),
 			Password: GetValue("DB_PASSWORD", "cozy123"),
+			SSLMode:  GetValue("DB_SSLMODE", "disabled"),
 		},
 		Redis: &RedisConfig{
 			Host:   GetValue("REDIS_HOST", "localhost"),
