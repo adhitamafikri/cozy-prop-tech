@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 700" width="800" height="700">
+  <defs>
+    <style>
+      .layer { stroke: #333; stroke-width: 2; }
+      .domain { fill: #e3f2fd; }
+      .usecase { fill: #fff3e0; }
+      .delivery { fill: #e8f5e9; }
+      .port { fill: #fce4ec; }
+      .infra { fill: #f3e5f5; }
+      .text { font-family: Arial, sans-serif; text-anchor: middle; }
+      .title { font-size: 18px; font-weight: bold; }
+      .label { font-size: 12px; }
+      .arrow { marker-end: url(#arrowhead); stroke: #666; stroke-width: 1.5; fill: none; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="700" fill="#fafafa"/>
+  
+  <!-- INFRASTRUCTURE LAYER (Outer Hexagon) -->
+  <polygon class="layer infra" points="400,50 650,175 650,525 400,650 150,525 150,175"/>
+  <text class="text title" x="400" y="80">INFRASTRUCTURE</text>
+  
+  <!-- Infrastructure Items -->
+  <rect x="180" y="200" width="120" height="60" rx="8" fill="#ede7f6" stroke="#7e57c2"/>
+  <text class="text label" x="240" y="235">PostgreSQL</text>
+  
+  <rect x="500" y="200" width="120" height="60" rx="8" fill="#ede7f6" stroke="#7e57c2"/>
+  <text class="text label" x="560" y="235">Redis</text>
+  
+  <rect x="340" y="440" width="120" height="60" rx="8" fill="#ede7f6" stroke="#7e57c2"/>
+  <text class="text label" x="400" y="475">External APIs</text>
+  
+  <!-- PORTS LAYER -->
+  <polygon class="layer port" points="400,100 600,200 600,500 400,600 200,500 200,200"/>
+  <text class="text title" x="400" y="130">PORTS (Interfaces)</text>
+  
+  <!-- Port Items -->
+  <rect x="220" y="240" width="140" height="50" rx="6" fill="#f8bbd9" stroke="#ec407a"/>
+  <text class="text label" x="290" y="270">Repository Port</text>
+  
+  <rect x="440" y="240" width="140" height="50" rx="6" fill="#f8bbd9" stroke="#ec407a"/>
+  <text class="text label" x="510" y="270">Cache Port</text>
+  
+  <rect x="330" y="380" width="140" height="50" rx="6" fill="#f8bbd9" stroke="#ec407a"/>
+  <text class="text label" x="400" y="410">Message Port</text>
+  
+  <!-- DELIVERY LAYER -->
+  <polygon class="layer delivery" points="400,150 550,230 550,470 400,550 250,470 250,230"/>
+  <text class="text title" x="400" y="180">DELIVERY (Adapters)</text>
+  
+  <!-- Delivery Items -->
+  <rect x="280" y="280" width="120" height="50" rx="6" fill="#c8e6c9" stroke="#43a047"/>
+  <text class="text label" x="340" y="310">HTTP Handler</text>
+  
+  <rect x="400" y="280" width="120" height="50" rx="6" fill="#c8e6c9" stroke="#43a047"/>
+  <text class="text label" x="460" y="310">gRPC</text>
+  
+  <rect x="340" y="400" width="120" height="50" rx="6" fill="#c8e6c9" stroke="#43a047"/>
+  <text class="text label" x="400" y="430">CLI Handler</text>
+  
+  <!-- USE CASE LAYER -->
+  <polygon class="layer usecase" points="400,200 500,260 500,440 400,500 300,440 300,260"/>
+  <text class="text title" x="400" y="225">USE CASES</text>
+  <text class="text label" x="400" y="250">(Application Logic)</text>
+  
+  <!-- Use Case Items -->
+  <rect x="330" y="300" width="140" height="45" rx="6" fill="#ffe0b2" stroke="#fb8c00"/>
+  <text class="text label" x="400" y="327">CreateUser</text>
+  
+  <rect x="330" y="350" width="140" height="45" rx="6" fill="#ffe0b2" stroke="#fb8c00"/>
+  <text class="text label" x="400" y="377">BookListing</text>
+  
+  <rect x="330" y="400" width="140" height="45" rx="6" fill="#ffe0b2" stroke="#fb8c00"/>
+  <text class="text label" x="400" y="427">CheckAvailability</text>
+  
+  <!-- DOMAIN LAYER (Center Hexagon) -->
+  <polygon class="layer domain" points="400,250 460,290 460,410 400,450 340,410 340,290"/>
+  <text class="text title" x="400" y="320">DOMAIN</text>
+  <text class="text label" x="400" y="340">(Entities,</text>
+  <text class="text label" x="400" y="355">Business Rules)</text>
+  
+  <!-- Domain Entities -->
+  <rect x="355" y="380" width="90" height="35" rx="4" fill="#bbdefb" stroke="#1976d2"/>
+  <text class="text label" x="400" y="403">User</text>
+  
+  <rect x="355" y="420" width="90" height="35" rx="4" fill="#bbdefb" stroke="#1976d2"/>
+  <text class="text label" x="400" y="443">Listing</text>
+  
+  <!-- Arrows showing dependency flow -->
+  <!-- Infrastructure to Ports -->
+  <line class="arrow" x1="200" y1="260" x2="220" y2="260"/>
+  <line class="arrow" x1="600" y1="260" x2="580" y2="260"/>
+  <line class="arrow" x1="400" y1="500" x2="400" y2="470"/>
+  
+  <!-- Ports to Delivery -->
+  <line class="arrow" x1="250" y1="280" x2="280" y2="290"/>
+  <line class="arrow" x1="550" y1="280" x2="520" y2="290"/>
+  
+  <!-- Delivery to Use Case -->
+  <line class="arrow" x1="300" y1="300" x2="330" y2="310"/>
+  <line class="arrow" x1="500" y1="300" x2="470" y2="310"/>
+  
+  <!-- Use Case to Domain -->
+  <line class="arrow" x1="350" y1="350" x2="360" y2="330"/>
+  <line class="arrow" x1="450" y1="350" x2="440" y2="330"/>
+  
+  <!-- Legend -->
+  <rect x="50" y="550" width="200" height="120" rx="8" fill="white" stroke="#ccc"/>
+  <text class="text title" x="150" y="575">LEGEND</text>
+  <rect x="65" y="585" width="20" height="15" fill="#e3f2fd" stroke="#333"/>
+  <text class="text label" x="95" y="597" text-anchor="start">Domain</text>
+  <rect x="65" y="605" width="20" height="15" fill="#fff3e0" stroke="#333"/>
+  <text class="text label" x="95" y="617" text-anchor="start">Use Cases</text>
+  <rect x="65" y="625" width="20" height="15" fill="#e8f5e9" stroke="#333"/>
+  <text class="text label" x="95" y="637" text-anchor="start">Delivery</text>
+  <rect x="65" y="645" width="20" height="15" fill="#fce4ec" stroke="#333"/>
+  <text class="text label" x="95" y="657" text-anchor="start">Ports</text>
+  
+  <!-- Dependency Rule Note -->
+  <rect x="300" y="560" width="280" height="50" rx="8" fill="#fff9c4" stroke="#f9a825"/>
+  <text class="text label" x="440" y="580">Dependencies flow INWARD only</text>
+  <text class="text label" x="440" y="598">Outer layers depend on inner layers</text>
+  
+  <!-- Direction arrows note -->
+  <text class="text label" x="400" y="680" fill="#666">Outer: Infrastructure | Inner: Domain</text>
+</svg>

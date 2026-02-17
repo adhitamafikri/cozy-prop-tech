@@ -47,7 +47,7 @@ Our backend **api** is responsible for handling these domains:
 - Live Reloading: Air (https://github.com/air-verse/air)
 - Reverse Proxy: nginx
 
-The architecture of the backend project is inspired by [https://github.com/khannedy/golang-clean-architecture](https://github.com/khannedy/golang-clean-architecture)
+This backend project uses *Hexagonal Architecture*
 
 ### Infra CI/CD
 

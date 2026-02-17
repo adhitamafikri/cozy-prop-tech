@@ -42,6 +42,8 @@ Our backend **api** is responsible for handling these domains:
 - Availability
 - Booking
 
+This backend project uses *Hexagonal Architecture*
+
 ## Running the Project Locally
 
 **Copy .env and Install Dependencies for All Projects**
