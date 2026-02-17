@@ -13,6 +13,15 @@ start-admin:
 	bun -v
 	bun run dev
 
+.PHONY: up
+up:
+	docker compose -f docker-compose.yml up -d
+	docker compose ps
+
+.PHONY: down
+down:
+	docker compose -f docker-compose.yml down
+
 .PHONY: api-up
 api-up:
 	docker compose -f docker-compose.yml up -d api

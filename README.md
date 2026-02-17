@@ -69,3 +69,8 @@ You will have these services running on your machine:
 | web                      | 5173  |
 | admin                    | 5174  |
 | api                      | 8082  |
+
+## Reading Links
+
+- [https://github.com/khannedy/golang-clean-architecture/blob/main](https://github.com/khannedy/golang-clean-architecture/blob/main)
+- [https://betterstack.com/community/guides/logging/logging-in-go/](https://betterstack.com/community/guides/logging/logging-in-go/)

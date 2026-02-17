@@ -47,6 +47,8 @@ Our backend **api** is responsible for handling these domains:
 - Live Reloading: Air (https://github.com/air-verse/air)
 - Reverse Proxy: nginx
 
+The architecture of the backend project is inspired by [https://github.com/khannedy/golang-clean-architecture](https://github.com/khannedy/golang-clean-architecture)
+
 ### Infra CI/CD
 
 - Docker
@@ -111,8 +113,8 @@ Code is truth. Documentation may lag behind. When in doubt:
 
 We have multiple services here in this project. In order to know about which port the service is running on, consult to the table below:
 
-| Services                 | Ports |
-| ------------------------ | ----- |
-| web                      | 5173  |
-| admin                    | 5174  |
-| api                      | 8082  |
+| Services | Ports |
+| -------- | ----- |
+| web      | 5173  |
+| admin    | 5174  |
+| api      | 8082  |
