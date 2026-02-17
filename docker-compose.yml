@@ -4,6 +4,7 @@ services:
       context: ./backend/api
       dockerfile: Dockerfile
       target: development
+    container_name: cozy-prop-api
     ports:
       - "8082:8082"
     volumes:
@@ -18,10 +19,15 @@ services:
 
   postgres:
     image: postgres:17-alpine
+    container_name: cozy-prop-postgres
+    env_file:
+      - ./backend/api/.env
     environment:
-      POSTGRES_DB: cozy_listings
-      POSTGRES_USER: cozy
-      POSTGRES_PASSWORD: cozy123
+      POSTGRES_DB: ${DB_NAME:-cozy_prop_db}
+      POSTGRES_USER: ${DB_USER:-cozy}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-cozy123}
+    ports:
+      - '5432:5432'
     volumes:
       - postgres_data:/var/lib/postgresql/data
     networks:
@@ -29,6 +35,7 @@ services:
 
   redis:
     image: redis:7-alpine
+    container_name: cozy-prop-redis
     volumes:
       - redis_data:/data
     networks:

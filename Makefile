@@ -13,13 +13,17 @@ start-admin:
 	bun -v
 	bun run dev
 
-.PHONY: start-api
-start-api:
+.PHONY: api-up
+api-up:
 	docker compose -f docker-compose.yml up -d api
 
-.PHONY: stop-api
-stop-api:
+.PHONY: api-down
+api-down:
 	docker compose -f docker-compose.yml down api
+
+.PHONY: api-logs
+api-logs:
+	docker compose -f docker-compose.yml logs -f api
 
 .PHONY: connect-db
 connect-db:
