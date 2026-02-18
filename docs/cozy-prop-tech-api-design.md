@@ -375,6 +375,51 @@ type DeleteUserResponse = Response<{ message: string }>;
 type DeleteUserError = ErrorResponse;
 ```
 
+#### Assign Role to User
+
+- Method: `POST`
+- Path: `/users/:id/roles`
+- Auth: Bearer (JWT access token)
+- Security Aspects:
+  - Need valid JWT access token
+  - Rate Limiter: Per-IP limit, 60 requests per 1 minute
+
+**Request Params**
+
+```typescript
+type RequestParams = {
+  id: number; // id of role
+};
+```
+
+**Request Body**
+
+```typescript
+type AssignRoleToUserRequest = {
+  role_ids: number[]
+};
+```
+
+**Response Body : 200 OK**
+
+```typescript
+type AssignRoleToUserResponse = Response<{
+  id: number;
+  name: string;
+  email: string;
+  phone: string;
+  created_at: timestamp;
+  updated_at: timestamp;
+  roles: { id: number; name: string; }[]
+}>;
+```
+
+**Error Response Body : 4xx, 5xx**
+
+```typescript
+type AssignRoleToUserError = ErrorResponse;
+```
+
 ---
 
 #### Role Management
@@ -557,6 +602,50 @@ type DeleteRoleResponse = Response<{ message: string }>;
 
 ```typescript
 type DeleteRoleError = ErrorResponse;
+```
+
+#### Assign Permission to Role
+
+- Method: `POST`
+- Path: `/roles/:id/permissions`
+- Auth: Bearer (JWT access token)
+- Security Aspects:
+  - Need valid JWT access token
+  - Rate Limiter: Per-IP limit, 60 requests per 1 minute
+
+**Request Params**
+
+```typescript
+type RequestParams = {
+  id: number; // id of role
+};
+```
+
+**Request Body**
+
+```typescript
+type AssignPermissionToRoleRequest = {
+  permission_ids: number[]
+};
+```
+
+**Response Body : 200 OK**
+
+```typescript
+type AssignPermissionToRoleResponse = Response<{
+  id: number;
+  name: string;
+  description: string;
+  created_at: timestamp;
+  updated_at: timestamp;
+  permissions: { id: number; name: string; }[]
+}>;
+```
+
+**Error Response Body : 4xx, 5xx**
+
+```typescript
+type AssignPermissionToRoleError = ErrorResponse;
 ```
 
 ---
