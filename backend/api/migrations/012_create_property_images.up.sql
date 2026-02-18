@@ -6,10 +6,10 @@ CREATE TABLE IF NOT EXISTS property_images (
     property_id INT NOT NULL REFERENCES properties(id) ON DELETE CASCADE,
     url VARCHAR(2048) NOT NULL,
     is_primary BOOLEAN NOT NULL DEFAULT FALSE,
-    "order" INT NOT NULL DEFAULT 0,
+    sort_order INT NOT NULL DEFAULT 0,
     created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    CONSTRAINT uq_property_images_property_order UNIQUE (property_id, "order")
+    CONSTRAINT uq_property_images_property_sort_order UNIQUE (property_id, sort_order)
 );
 
 CREATE INDEX idx_property_images_property_id ON property_images(property_id);

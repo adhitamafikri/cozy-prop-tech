@@ -6,10 +6,10 @@ CREATE TABLE IF NOT EXISTS listing_images (
     listing_id INT NOT NULL REFERENCES listings(id) ON DELETE CASCADE,
     url VARCHAR(2048) NOT NULL,
     is_primary BOOLEAN NOT NULL DEFAULT FALSE,
-    "order" INT NOT NULL DEFAULT 0,
+    sort_order INT NOT NULL DEFAULT 0,
     created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    CONSTRAINT uq_listing_images_listing_order UNIQUE (listing_id, "order")
+    CONSTRAINT uq_listing_images_listing_sort_order UNIQUE (listing_id, sort_order)
 );
 
 CREATE INDEX idx_listing_images_listing_id ON listing_images(listing_id);

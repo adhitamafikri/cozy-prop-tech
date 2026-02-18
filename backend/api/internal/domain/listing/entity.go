@@ -43,7 +43,7 @@ type ListingImage struct {
 	ListingID int64     `json:"listing_id" db:"listing_id"`
 	URL       string    `json:"url" db:"url"`
 	IsPrimary bool      `json:"is_primary" db:"is_primary"`
-	Order     int       `json:"order" db:"order"`
+	SortOrder int       `json:"sort_order" db:"sort_order"`
 	CreatedAt time.Time `json:"created_at" db:"created_at"`
 	UpdatedAt time.Time `json:"updated_at" db:"updated_at"`
 }
