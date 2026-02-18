@@ -2226,9 +2226,9 @@ type UpdateProfileError = ErrorResponse;
 
 - Method: `GET`
 - Path: `/locations`
-- Auth: Bearer (JWT access token)
+- Auth: Bearer (guest JWT token or user JWT token)
 - Security Aspects:
-  - Need valid JWT access token
+  - Accessible to guests (with guest JWT) and logged-in users
   - Rate Limiter: Per-IP limit, 60 requests per 1 minute
 
 **Request Query Params**
@@ -2267,9 +2267,130 @@ type GetLocationsError = ErrorResponse;
 
 **Base Path**: `/api/v1/search`
 
+##### Search Listings
+
+- Method: `GET`
+- Path: `/search`
+- Auth: Bearer (guest JWT token or user JWT token)
+- Security Aspects:
+  - Accessible to guests (with guest JWT) and logged-in users
+  - Rate Limiter: Per-IP limit, 60 requests per 1 minute
+
+**Request Query Params**
+
+```typescript
+type SearchListingsRequest = PaginatedQueryParams & {
+  city_id?: number;
+  district_id?: number;
+};
+```
+
+**Response Body : 200 OK**
+
+```typescript
+type SearchListingsResponse = PaginatedResponse<{
+  id: number;
+  title: string;
+  description: string | null;
+  base_price: number;
+  status: "active" | "inactive";
+  guest_capacity: number;
+  minimum_reservation_nights: number;
+  maximum_reservation_nights: number;
+  cleaning_fee: number | null;
+  extra_guest_capacity: number;
+  extra_guest_fee: number | null;
+  num_beds: number;
+  num_bathrooms: number;
+  num_bedrooms: number;
+  amenities: Record<string, any> | null;
+  created_at: string;
+  updated_at: string;
+  property: {
+    id: number;
+    name: string;
+    address: string;
+    latitude: number;
+    longitude: number;
+  } | null;
+  image: { url: string } | null;
+}>;
+```
+
+**Error Response Body : 4xx, 5xx**
+
+```typescript
+type SearchListingsError = ErrorResponse;
+```
+
+---
+
 #### Listings
 
 **Base Path**: `/api/v1/listings`
+
+##### Get Listing Details
+
+- Method: `GET`
+- Path: `/listings/:id`
+- Auth: Bearer (guest JWT token or user JWT token)
+- Security Aspects:
+  - Accessible to guests (with guest JWT) and logged-in users
+  - Rate Limiter: Per-IP limit, 60 requests per 1 minute
+
+**Request Params**
+
+```typescript
+type RequestParams = {
+  id: number; // listing ID
+};
+```
+
+**Response Body : 200 OK**
+
+```typescript
+type GetListingDetailsResponse = Response<{
+  id: number;
+  title: string;
+  description: string | null;
+  base_price: number;
+  status: "active" | "inactive";
+  guest_capacity: number;
+  minimum_reservation_nights: number;
+  maximum_reservation_nights: number;
+  cleaning_fee: number | null;
+  extra_guest_capacity: number;
+  extra_guest_fee: number | null;
+  num_beds: number;
+  num_bathrooms: number;
+  num_bedrooms: number;
+  amenities: Record<string, any> | null;
+  created_at: string;
+  updated_at: string;
+  property: {
+    id: number;
+    name: string;
+    address: string;
+    latitude: number;
+    longitude: number;
+    location: { id: number; name: string } | null;
+  } | null;
+  images: {
+    id: number;
+    url: string;
+    is_primary: boolean;
+    sort_order: number;
+  }[];
+}>;
+```
+
+**Error Response Body : 4xx, 5xx**
+
+```typescript
+type GetListingDetailsError = ErrorResponse;
+```
+
+---
 
 #### Booking (P2 - Nice to Have)
 
