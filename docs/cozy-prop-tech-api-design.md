@@ -396,7 +396,7 @@ type RequestParams = {
 
 ```typescript
 type AssignRoleToUserRequest = {
-  role_ids: number[]
+  role_ids: number[];
 };
 ```
 
@@ -410,7 +410,7 @@ type AssignRoleToUserResponse = Response<{
   phone: string;
   created_at: timestamp;
   updated_at: timestamp;
-  roles: { id: number; name: string; }[]
+  roles: { id: number; name: string }[];
 }>;
 ```
 
@@ -418,6 +418,37 @@ type AssignRoleToUserResponse = Response<{
 
 ```typescript
 type AssignRoleToUserError = ErrorResponse;
+```
+
+##### GET Me (currently login admin data)
+
+- Method: `GET`
+- Path: `/users/me`
+- Auth: Bearer (JWT access token)
+- Security Aspects:
+  - Need valid JWT access token
+  - Rate Limiter: Per-IP limit, 60 requests per 1 minute
+
+**Response Body : 200 OK**
+
+```typescript
+type GetMeResponse = Response<{
+  id: number;
+  name: string;
+  email: string;
+  phone: string;
+  created_at: string;
+  roles: {
+    name: string;
+    permissions: string[];
+  }[];
+}>;
+```
+
+**Error Response Body : 4xx, 5xx**
+
+```typescript
+type GetMeError = ErrorResponse;
 ```
 
 ---
@@ -625,7 +656,7 @@ type RequestParams = {
 
 ```typescript
 type AssignPermissionToRoleRequest = {
-  permission_ids: number[]
+  permission_ids: number[];
 };
 ```
 
@@ -638,7 +669,7 @@ type AssignPermissionToRoleResponse = Response<{
   description: string;
   created_at: timestamp;
   updated_at: timestamp;
-  permissions: { id: number; name: string; }[]
+  permissions: { id: number; name: string }[];
 }>;
 ```
 
@@ -836,25 +867,57 @@ type DeletePermissionError = ErrorResponse;
 
 #### Location Management
 
+**Base Path**: `/api/v1/admin/locations`
+
 ---
 
 #### Properties Management
+
+**Base Path**: `/api/v1/admin/properties`
 
 ---
 
 #### Listings Management
 
+**Base Path**: `/api/v1/admin/listings`
+
 ---
 
 #### Listing Availability Management
+
+**Base Path**: `/api/v1/admin/listing-availability`
 
 ---
 
 #### Booking Management
 
+**Base Path**: `/api/v1/admin/bookings`
+
 ---
 
 ### Customer-Facing Endpoints
+
+**Base Path**: `/api/v1`
+
+#### Users
+
+**Base Path**: `/api/v1/users`
+
+#### Locations
+
+**Base Path**: `/api/v1/locations`
+
+#### Searches (search for listings)
+
+**Base Path**: `/api/v1/search`
+
+#### Listings
+
+**Base Path**: `/api/v1/listings`
+
+#### Bookings
+
+**Base Path**: `/api/v1/bookings`
 
 ---
 
