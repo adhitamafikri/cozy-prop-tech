@@ -164,6 +164,8 @@ type LoginResponse = Response<{ message: string }>;
 type LoginErrorResponse = ErrorResponse;
 ```
 
+---
+
 ### Admin-Facing Endpoints
 
 **Base Path**: `/api/v1/admin`
@@ -300,6 +302,14 @@ type CreateUserError = ErrorResponse;
   - Robust request body validation
   - Rate Limiter: Per-IP limit, 60 requests per 1 minute
 
+  **Request Params**
+
+```typescript
+type RequestParams = {
+  id: number;
+};
+```
+
 **Request Body**
 
 ```typescript
@@ -346,10 +356,11 @@ type UpdateUserError = ErrorResponse;
   - Rate Limiter: Per-IP limit, 60 requests per 1 minute
 
 **Request Params**
+
 ```typescript
 type RequestParams = {
-  id: number
-}
+  id: number;
+};
 ```
 
 **Response Body : 200 OK**
@@ -364,19 +375,403 @@ type DeleteUserResponse = Response<{ message: string }>;
 type DeleteUserError = ErrorResponse;
 ```
 
+---
+
+#### Role Management
+
+**Base Path**: `/api/v1/admin/roles`
+
+##### Get Roles
+
+- Method: `GET`
+- Path: `/roles`
+- Auth: Bearer (JWT access token)
+- Security Aspects:
+  - Need valid JWT access token
+  - Rate Limiter: Per-IP limit, 60 requests per 1 minute
+
+**Request Query Params**
+
+```typescript
+type GetRolesRequest = PaginatedQueryParams;
+```
+
+**Response Body : 200 OK**
+
+```typescript
+type GetRolesResponse = PaginatedResponse<{
+  id: number;
+  name: string;
+  description: string;
+  created_at: timestamp;
+  updated_at: timestamp;
+}>;
+```
+
+**Error Response Body : 4xx, 5xx**
+
+```typescript
+type GetRolesError = ErrorResponse;
+```
+
+##### Get Role By ID
+
+- Method: `GET`
+- Path: `/roles/:id`
+- Auth: Bearer (JWT access token)
+- Security Aspects:
+  - Need valid JWT access token
+  - Rate Limiter: Per-IP limit, 60 requests per 1 minute
+
+**Request Params**
+
+```typescript
+type RequestParams = {
+  id: number; // id of role
+};
+```
+
+**Response Body : 200 OK**
+
+```typescript
+type GetRoleByIDResponse = Response<{
+  id: number;
+  name: string;
+  description: string;
+  created_at: timestamp;
+  updated_at: timestamp;
+}>;
+```
+
+**Error Response Body : 4xx, 5xx**
+
+```typescript
+type GetRoleByIDError = ErrorResponse;
+```
+
+##### Create Role
+
+- Method: `POST`
+- Path: `/roles`
+- Auth: Bearer (JWT access token)
+- Security Aspects:
+  - Need valid JWT access token
+  - Rate Limiter: Per-IP limit, 60 requests per 1 minute
+
+**Request Body**
+
+```typescript
+type CreateRoleRequest = {
+  name: string;
+  description: string;
+};
+```
+
+**Response Body : 200 OK**
+
+```typescript
+type CreateRoleResponse = Response<{
+  id: number;
+  name: string;
+  description: string;
+  created_at: timestamp;
+  updated_at: timestamp;
+}>;
+```
+
+**Error Response Body : 4xx, 5xx**
+
+```typescript
+type CreateRoleError = ErrorResponse;
+```
+
+##### Update Role
+
+- Method: `PUT`
+- Path: `/roles/:id`
+- Auth: Bearer (JWT access token)
+- Security Aspects:
+  - Need valid JWT access token
+  - Rate Limiter: Per-IP limit, 60 requests per 1 minute
+
+**Request Params**
+
+```typescript
+type RequestParams = {
+  id: number; // id of role
+};
+```
+
+**Request Body**
+
+```typescript
+type UpdateRoleRequest = {
+  name: string;
+  description: string;
+};
+```
+
+**Response Body : 200 OK**
+
+```typescript
+type UpdateRoleResponse = Response<{
+  id: number;
+  name: string;
+  description: string;
+  created_at: timestamp;
+  updated_at: timestamp;
+}>;
+```
+
+**Error Response Body : 4xx, 5xx**
+
+```typescript
+type UpdateRoleError = ErrorResponse;
+```
+
+##### Delete Role
+
+- Method: `DELETE`
+- Path: `/roles/:id`
+- Auth: Bearer (JWT access token)
+- Security Aspects:
+  - Need valid JWT access token
+  - Rate Limiter: Per-IP limit, 60 requests per 1 minute
+  - Should return error if the role is used
+
+**Request Params**
+
+```typescript
+type RequestParams = {
+  id: number; // id of role
+};
+```
+
+**Response Body : 200 OK**
+
+```typescript
+type DeleteRoleResponse = Response<{ message: string }>;
+```
+
+**Error Response Body : 4xx, 5xx**
+
+```typescript
+type DeleteRoleError = ErrorResponse;
+```
+
+---
+
+#### Permission Management
+
+**Base Path**: `/api/v1/admin/permissions`
+
+##### Get Permission List
+
+- Method: `GET`
+- Path: `/permissions`
+- Auth: Bearer (JWT access token)
+- Security Aspects:
+  - Need valid JWT access token
+  - Rate Limiter: Per-IP limit, 60 requests per 1 minute
+
+**Request Query Params**
+
+```typescript
+type GetPermissionRequest = PaginatedQueryParams;
+```
+
+**Response Body : 200 OK**
+
+```typescript
+type GetPermissionResponse = PaginatedResponse<{
+  id: number;
+  name: string;
+  description: string;
+  created_at: timestamp;
+  updated_at: timestamp;
+}>;
+```
+
+**Error Response Body : 4xx, 5xx**
+
+```typescript
+type GetPermissionError = ErrorResponse;
+```
+
+##### Get Permission By ID
+
+- Method: `GET`
+- Path: `/permissions/:id`
+- Auth: Bearer (JWT access token)
+- Security Aspects:
+  - Need valid JWT access token
+  - Rate Limiter: Per-IP limit, 60 requests per 1 minute
+
+**Request Params**
+
+```typescript
+type RequestParams = {
+  id: number; // id of permission
+};
+```
+
+**Response Body : 200 OK**
+
+```typescript
+type GetPermissionByIDResponse = Response<{
+  id: number;
+  name: string;
+  description: string;
+  created_at: timestamp;
+  updated_at: timestamp;
+}>;
+```
+
+**Error Response Body : 4xx, 5xx**
+
+```typescript
+type GetPermissionByIDError = ErrorResponse;
+```
+
+##### Create Permission
+
+- Method: `POST`
+- Path: `/permissions`
+- Auth: Bearer (JWT access token)
+- Security Aspects:
+  - Need valid JWT access token
+  - Rate Limiter: Per-IP limit, 60 requests per 1 minute
+
+**Request Body**
+
+```typescript
+type CreatePermissionRequest = {
+  name: string;
+  description: string;
+};
+```
+
+**Response Body : 200 OK**
+
+```typescript
+type CreatePermissionResponse = Response<{
+  id: number;
+  name: string;
+  description: string;
+  created_at: timestamp;
+  updated_at: timestamp;
+}>;
+```
+
+**Error Response Body : 4xx, 5xx**
+
+```typescript
+type CreatePermissionError = ErrorResponse;
+```
+
+##### Update Permission
+
+- Method: `PUT`
+- Path: `/permissions/:id`
+- Auth: Bearer (JWT access token)
+- Security Aspects:
+  - Need valid JWT access token
+  - Rate Limiter: Per-IP limit, 60 requests per 1 minute
+
+**Request Params**
+
+```typescript
+type RequestParams = {
+  id: number; // id of permisssion
+};
+```
+
+**Request Body**
+
+```typescript
+type UpdatePermissionRequest = {
+  name: string;
+  description: string;
+};
+```
+
+**Response Body : 200 OK**
+
+```typescript
+type UpdatePermissionResponse = Response<{
+  id: number;
+  name: string;
+  description: string;
+  created_at: timestamp;
+  updated_at: timestamp;
+}>;
+```
+
+**Error Response Body : 4xx, 5xx**
+
+```typescript
+type UpdatePermissionError = ErrorResponse;
+```
+
+##### Delete Permission
+
+- Method: `DELETE`
+- Path: `/permissions/:id`
+- Auth: Bearer (JWT access token)
+- Security Aspects:
+  - Need valid JWT access token
+  - Rate Limiter: Per-IP limit, 60 requests per 1 minute
+  - Should return error if the permission is used
+
+**Request Params**
+
+```typescript
+type RequestParams = {
+  id: number; // id of permission
+};
+```
+
+**Response Body : 200 OK**
+
+```typescript
+type DeletePermissionResponse = Response<{ message: string }>;
+```
+
+**Error Response Body : 4xx, 5xx**
+
+```typescript
+type DeletePermissionError = ErrorResponse;
+```
+
+---
+
 #### Location Management
+
+---
 
 #### Properties Management
 
+---
+
 #### Listings Management
+
+---
 
 #### Listing Availability Management
 
+---
+
 #### Booking Management
 
+---
+
 ### Customer-Facing Endpoints
+
+---
 
 ### Security
 
 - All endpoints should use JWT for authorizing user requests
 - All the endpoints should be guarded by RBAC middleware
+
+---
