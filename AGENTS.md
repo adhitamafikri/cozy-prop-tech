@@ -30,32 +30,37 @@ Our backend **api** is responsible for handling these domains:
 
 ### Frontend
 
-- User Facing Site: bun + Nuxt 4 + Pinia + Typescript + TailwindCSS
-- Admin Facing Site: bun + Vite + Vue 3 + Pinia + Typescript + TailwindCSS
-- Maps: Leaflet + OpenStreetMap
-- Unit testing: Vitest + @testing-library/vue
-- E2E testing: Playwright
+| Category | Technology | Notes |
+|----------|------------|-------|
+| User Site | bun, Vite Vue 3, Pinia, TypeScript, TailwindCSS | Customer-facing |
+| Admin Site | bun, Vite, Vue 3, Pinia, TypeScript, TailwindCSS | Admin-facing |
+| Maps | Leaflet, OpenStreetMap | |
+| Forms & Validation | VeeValidate | |
+| Unit Testing | Vitest, @testing-library/vue | |
+| E2E Testing | Playwright | |
 
 ### Backend
 
-- Programming Language: Go v1.2
-- Routing Framework: Gin (github.com/gin-gonic/gin)
-- Database: PostgreSQL v17 + sqlx (https://github.com/jmoiron/sqlx)
-- Migrations: Golang Migrate (https://github.com/golang-migrate/migrate), run with Docker
-- Caching: Redis v8 + Go-Redis (https://github.com/redis/go-redis)
-- Logging: slog (https://pkg.go.dev/golang.org/x/exp/slog)
-- Auth: JWT (https://github.com/golang-jwt/jwt)
-- Live Reloading: Air (https://github.com/air-verse/air)
-- Reverse Proxy: nginx
-
-This backend project uses *Hexagonal Architecture*
+| Category | Technology | Notes |
+|----------|------------|-------|
+| Language | Go v1.2 | |
+| Routing | Gin | github.com/gin-gonic/gin |
+| Database | PostgreSQL v17, sqlx | |
+| Migrations | Golang Migrate | Run with Docker |
+| Caching | Redis v8, Go-Redis | |
+| Logging | slog | |
+| Auth | JWT | |
+| Live Reload | Air | |
+| Reverse Proxy | nginx | |
+| Architecture | Hexagonal | |
 
 ### Infra CI/CD
 
-- Docker
-- Docker Compose
-- Infisical (secrets management)
-- Github Actions
+| Category | Technology |
+|----------|------------|
+| Containerization | Docker, Docker Compose |
+| Secrets Management | Infisical |
+| CI/CD | GitHub Actions |
 
 ## Project Notes
 
