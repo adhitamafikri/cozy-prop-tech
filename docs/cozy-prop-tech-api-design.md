@@ -23,6 +23,18 @@ There will be 2 types of endpoints, _user-facing_ and _admin_ endpoints
 
 > This section contains base schemas that could be reused across the endpoints
 
+#### Standard Paginated Request Query Params
+
+```typescript
+type PaginatedQueryParams = {
+  q?: string;
+  page?: number;
+  per_page?: number;
+  sort_by?: string;
+  order?: "asc" | "desc";
+};
+```
+
 #### Standard Response Body Schema
 
 ```typescript
@@ -119,6 +131,8 @@ type RegistrationErrorResponse = ErrorResponse;
 - Security Aspects:
   - Need valid guest JWT token
   - Rate Limiter: Per-IP limit, 1 requests for 5 minutes
+  - Access Token: 15 minutes expiry
+  - Refresh Token: 24 hours expiry
 
 **Request Body**
 
@@ -138,7 +152,7 @@ type LoginResponseHeader = {
 };
 ```
 
-**Response Body : 200 OK**
+**Response Body : 201 OK**
 
 ```typescript
 type LoginResponse = Response<{ message: string }>;
@@ -152,7 +166,203 @@ type LoginErrorResponse = ErrorResponse;
 
 ### Admin-Facing Endpoints
 
+**Base Path**: `/api/v1/admin`
+
 #### User Management
+
+**Base Path**: `/api/v1/admin/users`
+
+##### GET Users
+
+- Method: `GET`
+- Path: `/users`
+- Auth: Bearer (JWT access token)
+- Security Aspects:
+  - Need valid JWT access token
+  - Rate Limiter: Per-IP limit, 60 requests per 1 minute
+
+**Request Query Params**
+
+```typescript
+type GetUsersRequest = PaginatedQueryParams;
+```
+
+**Response Body : 200 OK**
+
+```typescript
+type GetUsersRequest = PaginatedResponse<{
+  id: number;
+  name: string;
+  email: string;
+  phone: string;
+  created_at: string;
+}>;
+```
+
+**Error Response Body : 4xx, 5xx**
+
+```typescript
+type GetUsersError = ErrorResponse;
+```
+
+##### GET User By ID
+
+- Method: `GET`
+- Path: `/users/:id`
+- Auth: Bearer (JWT access token)
+- Security Aspects:
+  - Need valid JWT access token
+  - Rate Limiter: Per-IP limit, 60 requests per 1 minute
+
+**Request Params**
+
+```typescript
+type RequestParams = {
+  id: number; // id of user
+};
+```
+
+**Response Body : 200 OK**
+
+```typescript
+type GetUserById = Response<{
+  id: number;
+  name: string;
+  email: string;
+  phone: string;
+  created_at: string;
+  roles: {
+    name: string;
+    permissions: string[];
+  }[];
+}>;
+```
+
+**Error Response Body : 4xx, 5xx**
+
+```typescript
+type GetUserByIDError = ErrorResponse;
+```
+
+##### Create User
+
+- Method: `POST`
+- Path: `/users`
+- Auth: Bearer (JWT access token)
+- Security Aspects:
+  - Need valid JWT access token
+  - Robust request body validation
+  - Rate Limiter: Per-IP limit, 60 requests per 1 minute
+
+**Request Body**
+
+```typescript
+type CreateUserRequest = {
+  name: string;
+  email: string;
+  phone: string;
+  roles: {
+    name: string;
+    permissions: string[];
+  }[];
+};
+```
+
+**Response Body : 201 OK**
+
+```typescript
+type CreateUserResponse = Response<{
+  id: number;
+  name: string;
+  email: string;
+  phone: string;
+  created_at: string;
+  roles: {
+    name: string;
+    permissions: string[];
+  }[];
+}>;
+```
+
+**Error Response Body : 4xx, 5xx**
+
+```typescript
+type CreateUserError = ErrorResponse;
+```
+
+##### Update User
+
+- Method: `PUT`
+- Path: `/users/:id`
+- Auth: Bearer (JWT access token)
+- Security Aspects:
+  - Need valid JWT access token
+  - Robust request body validation
+  - Rate Limiter: Per-IP limit, 60 requests per 1 minute
+
+**Request Body**
+
+```typescript
+type UpdateUserRequest = {
+  name: string;
+  email: string;
+  phone: string;
+  roles: {
+    name: string;
+    permissions: string[];
+  }[];
+};
+```
+
+**Response Body : 200 OK**
+
+```typescript
+type UpdateUserResponse = Response<{
+  id: number;
+  name: string;
+  email: string;
+  phone: string;
+  created_at: string;
+  roles: {
+    name: string;
+    permissions: string[];
+  }[];
+}>;
+```
+
+**Error Response Body : 4xx, 5xx**
+
+```typescript
+type UpdateUserError = ErrorResponse;
+```
+
+##### Delete User
+
+- Method: `DELETE`
+- Path: `/users/:id`
+- Auth: Bearer (JWT access token)
+- Security Aspects:
+  - Need valid JWT access token
+  - Rate Limiter: Per-IP limit, 60 requests per 1 minute
+
+**Request Params**
+```typescript
+type RequestParams = {
+  id: number
+}
+```
+
+**Response Body : 200 OK**
+
+```typescript
+type DeleteUserResponse = Response<{ message: string }>;
+```
+
+**Error Response Body : 4xx, 5xx**
+
+```typescript
+type DeleteUserError = ErrorResponse;
+```
 
 #### Location Management
 
