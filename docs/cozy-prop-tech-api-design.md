@@ -891,10 +891,10 @@ type GetLocationsResponse = PaginatedResponse<{
   id: number;
   name: string;
   category: "country" | "province" | "city" | "district" | "neighborhood";
-  description?: string;
-  latitude?: number;
-  longitude?: number;
-  parent_id?: number;
+  description: string | null;
+  latitude: number | null;
+  longitude: number | null;
+  parent_id: number | null;
   created_at: string;
   updated_at: string;
 }>;
@@ -930,10 +930,10 @@ type GetLocationByIDResponse = Response<{
   id: number;
   name: string;
   category: "country" | "province" | "city" | "district" | "neighborhood";
-  description?: string;
-  latitude?: number;
-  longitude?: number;
-  parent_id?: number;
+  description: string | null;
+  latitude: number | null;
+  longitude: number | null;
+  parent_id: number | null;
   created_at: string;
   updated_at: string;
 }>;
@@ -975,10 +975,10 @@ type CreateLocationResponse = Response<{
   id: number;
   name: string;
   category: "country" | "province" | "city" | "district" | "neighborhood";
-  description?: string;
-  latitude?: number;
-  longitude?: number;
-  parent_id?: number;
+  description: string | null;
+  latitude: number | null;
+  longitude: number | null;
+  parent_id: number | null;
   created_at: string;
   updated_at: string;
 }>;
@@ -1028,10 +1028,10 @@ type UpdateLocationResponse = Response<{
   id: number;
   name: string;
   category: "country" | "province" | "city" | "district" | "neighborhood";
-  description?: string;
-  latitude?: number;
-  longitude?: number;
-  parent_id?: number;
+  description: string | null;
+  latitude: number | null;
+  longitude: number | null;
+  parent_id: number | null;
   created_at: string;
   updated_at: string;
 }>;
@@ -1078,6 +1078,449 @@ type DeleteLocationError = ErrorResponse;
 #### Properties Management
 
 **Base Path**: `/api/v1/admin/properties`
+
+##### Get Properties
+
+- Method: `GET`
+- Path: `/properties`
+- Auth: Bearer (JWT access token)
+- Security Aspects:
+  - Need valid JWT access token
+  - Rate Limiter: Per-IP limit, 60 requests per 1 minute
+
+**Request Query Params**
+
+```typescript
+type GetPropertiesRequest = PaginatedQueryParams & {
+  property_type_id?: number;
+};
+```
+
+**Response Body : 200 OK**
+
+```typescript
+type GetPropertiesResponse = PaginatedResponse<{
+  id: number;
+  location_id: number;
+  address: string;
+  latitude: number;
+  longitude: number;
+  area_sqm: number;
+  building_amenities: Record<string, any> | null;
+  created_at: string;
+  updated_at: string;
+  property_type: { id: number; name: string } | null;
+  location: { id: number; name: string } | null;
+  owner: { id: number; name: string } | null;
+}>;
+```
+
+**Error Response Body : 4xx, 5xx**
+
+```typescript
+type GetPropertiesError = ErrorResponse;
+```
+
+##### Get Property By ID
+
+- Method: `GET`
+- Path: `/properties/:id`
+- Auth: Bearer (JWT access token)
+- Security Aspects:
+  - Need valid JWT access token
+  - Rate Limiter: Per-IP limit, 60 requests per 1 minute
+
+**Request Params**
+
+```typescript
+type RequestParams = {
+  id: number; // id of property
+};
+```
+
+**Response Body : 200 OK**
+
+```typescript
+type GetPropertyByIDResponse = Response<{
+  id: number;
+  location_id: number;
+  address: string;
+  latitude: number;
+  longitude: number;
+  area_sqm: number;
+  building_amenities: Record<string, any> | null;
+  created_at: string;
+  updated_at: string;
+  property_type: { id: number; name: string } | null;
+  location: { id: number; name: string } | null;
+  owner: { id: number; name: string } | null;
+}>;
+```
+
+**Error Response Body : 4xx, 5xx**
+
+```typescript
+type GetPropertyByIDError = ErrorResponse;
+```
+
+##### Create Property
+
+- Method: `POST`
+- Path: `/properties`
+- Auth: Bearer (JWT access token)
+- Security Aspects:
+  - Need valid JWT access token
+  - Robust request body validation
+  - Rate Limiter: Per-IP limit, 60 requests per 1 minute
+
+**Request Body**
+
+```typescript
+type CreatePropertyRequest = {
+  owner_id: number;
+  property_type_id: number;
+  location_id: number;
+  address: string;
+  latitude: number;
+  longitude: number;
+  area_sqm: number;
+  building_amenities?: Record<string, any>;
+};
+```
+
+**Response Body : 201 OK**
+
+```typescript
+type CreatePropertyResponse = Response<{
+  id: number;
+  owner_id: number;
+  property_type_id: number;
+  location_id: number;
+  address: string;
+  latitude: number;
+  longitude: number;
+  area_sqm: number;
+  building_amenities: Record<string, any> | null;
+  created_at: string;
+  updated_at: string;
+}>;
+```
+
+**Error Response Body : 4xx, 5xx**
+
+```typescript
+type CreatePropertyError = ErrorResponse;
+```
+
+##### Update Property
+
+- Method: `PUT`
+- Path: `/properties/:id`
+- Auth: Bearer (JWT access token)
+- Security Aspects:
+  - Need valid JWT access token
+  - Robust request body validation
+  - Rate Limiter: Per-IP limit, 60 requests per 1 minute
+
+**Request Params**
+
+```typescript
+type RequestParams = {
+  id: number; // id of property
+};
+```
+
+**Request Body**
+
+```typescript
+type UpdatePropertyRequest = {
+  owner_id?: number;
+  property_type_id?: number;
+  location_id?: number;
+  address?: string;
+  latitude?: number;
+  longitude?: number;
+  area_sqm?: number;
+  building_amenities?: Record<string, any>;
+};
+```
+
+**Response Body : 200 OK**
+
+```typescript
+type UpdatePropertyResponse = Response<{
+  id: number;
+  owner_id: number;
+  property_type_id: number;
+  location_id: number;
+  address: string;
+  latitude: number;
+  longitude: number;
+  area_sqm: number;
+  building_amenities: Record<string, any> | null;
+  created_at: string;
+  updated_at: string;
+}>;
+```
+
+**Error Response Body : 4xx, 5xx**
+
+```typescript
+type UpdatePropertyError = ErrorResponse;
+```
+
+##### Delete Property
+
+- Method: `DELETE`
+- Path: `/properties/:id`
+- Auth: Bearer (JWT access token)
+- Security Aspects:
+  - Need valid JWT access token
+  - Rate Limiter: Per-IP limit, 60 requests per 1 minute
+  - Should return error if the property is used by other entities (listings)
+
+**Request Params**
+
+```typescript
+type RequestParams = {
+  id: number; // id of property
+};
+```
+
+**Response Body : 200 OK**
+
+```typescript
+type DeletePropertyResponse = Response<{ message: string }>;
+```
+
+**Error Response Body : 4xx, 5xx**
+
+```typescript
+type DeletePropertyError = ErrorResponse;
+```
+
+##### Get Property Images
+
+- Method: `GET`
+- Path: `/properties/:id/images`
+- Auth: Bearer (JWT access token)
+- Security Aspects:
+  - Need valid JWT access token
+  - Rate Limiter: Per-IP limit, 60 requests per 1 minute
+
+**Request Params**
+
+```typescript
+type RequestParams = {
+  id: number; // id of property
+};
+```
+
+**Response Body : 200 OK**
+
+```typescript
+type GetPropertyImagesResponse = Response<{
+  id: number;
+  property_id: number;
+  url: string;
+  is_primary: boolean;
+  order: number;
+  created_at: string;
+  updated_at: string;
+}[]>;
+```
+
+**Error Response Body : 4xx, 5xx**
+
+```typescript
+type GetPropertyImagesError = ErrorResponse;
+```
+
+---
+
+#### Property Types Management
+
+**Base Path**: `/api/v1/admin/property-types`
+
+##### Get Property Types
+
+- Method: `GET`
+- Path: `/property-types`
+- Auth: Bearer (JWT access token)
+- Security Aspects:
+  - Need valid JWT access token
+  - Rate Limiter: Per-IP limit, 60 requests per 1 minute
+
+**Request Query Params**
+
+```typescript
+type GetPropertyTypesRequest = PaginatedQueryParams;
+```
+
+**Response Body : 200 OK**
+
+```typescript
+type GetPropertyTypesResponse = PaginatedResponse<{
+  id: number;
+  name: string;
+  description: string | null;
+  created_at: string;
+  updated_at: string;
+}>;
+```
+
+**Error Response Body : 4xx, 5xx**
+
+```typescript
+type GetPropertyTypesError = ErrorResponse;
+```
+
+##### Get Property Type By ID
+
+- Method: `GET`
+- Path: `/property-types/:id`
+- Auth: Bearer (JWT access token)
+- Security Aspects:
+  - Need valid JWT access token
+  - Rate Limiter: Per-IP limit, 60 requests per 1 minute
+
+**Request Params**
+
+```typescript
+type RequestParams = {
+  id: number; // id of property type
+};
+```
+
+**Response Body : 200 OK**
+
+```typescript
+type GetPropertyTypeByIDResponse = Response<{
+  id: number;
+  name: string;
+  description: string | null;
+  created_at: string;
+  updated_at: string;
+}>;
+```
+
+**Error Response Body : 4xx, 5xx**
+
+```typescript
+type GetPropertyTypeByIDError = ErrorResponse;
+```
+
+##### Create Property Type
+
+- Method: `POST`
+- Path: `/property-types`
+- Auth: Bearer (JWT access token)
+- Security Aspects:
+  - Need valid JWT access token
+  - Robust request body validation
+  - Rate Limiter: Per-IP limit, 60 requests per 1 minute
+
+**Request Body**
+
+```typescript
+type CreatePropertyTypeRequest = {
+  name: string;
+  description?: string;
+};
+```
+
+**Response Body : 201 OK**
+
+```typescript
+type CreatePropertyTypeResponse = Response<{
+  id: number;
+  name: string;
+  description: string | null;
+  created_at: string;
+  updated_at: string;
+}>;
+```
+
+**Error Response Body : 4xx, 5xx**
+
+```typescript
+type CreatePropertyTypeError = ErrorResponse;
+```
+
+##### Update Property Type
+
+- Method: `PUT`
+- Path: `/property-types/:id`
+- Auth: Bearer (JWT access token)
+- Security Aspects:
+  - Need valid JWT access token
+  - Robust request body validation
+  - Rate Limiter: Per-IP limit, 60 requests per 1 minute
+
+**Request Params**
+
+```typescript
+type RequestParams = {
+  id: number; // id of property type
+};
+```
+
+**Request Body**
+
+```typescript
+type UpdatePropertyTypeRequest = {
+  name?: string;
+  description?: string;
+};
+```
+
+**Response Body : 200 OK**
+
+```typescript
+type UpdatePropertyTypeResponse = Response<{
+  id: number;
+  name: string;
+  description: string | null;
+  created_at: string;
+  updated_at: string;
+}>;
+```
+
+**Error Response Body : 4xx, 5xx**
+
+```typescript
+type UpdatePropertyTypeError = ErrorResponse;
+```
+
+##### Delete Property Type
+
+- Method: `DELETE`
+- Path: `/property-types/:id`
+- Auth: Bearer (JWT access token)
+- Security Aspects:
+  - Need valid JWT access token
+  - Rate Limiter: Per-IP limit, 60 requests per 1 minute
+  - Should return error if the property type is used by properties
+
+**Request Params**
+
+```typescript
+type RequestParams = {
+  id: number; // id of property type
+};
+```
+
+**Response Body : 200 OK**
+
+```typescript
+type DeletePropertyTypeResponse = Response<{ message: string }>;
+```
+
+**Error Response Body : 4xx, 5xx**
+
+```typescript
+type DeletePropertyTypeError = ErrorResponse;
+```
 
 ---
 
