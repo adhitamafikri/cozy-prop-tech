@@ -2148,9 +2148,120 @@ type BulkDeleteListingAvailabilityError = ErrorResponse;
 
 **Base Path**: `/api/v1/users`
 
+##### Get Current User
+
+- Method: `GET`
+- Path: `/users/me`
+- Auth: Bearer (JWT access token)
+- Security Aspects:
+  - Need valid JWT access token
+  - Rate Limiter: Per-IP limit, 60 requests per 1 minute
+
+**Response Body : 200 OK**
+
+```typescript
+type GetCurrentUserResponse = Response<{
+  id: number;
+  name: string;
+  email: string;
+  phone: string;
+  created_at: string;
+  updated_at: string;
+  roles: { id: number; name: string }[] | null;
+}>;
+```
+
+**Error Response Body : 4xx, 5xx**
+
+```typescript
+type GetCurrentUserError = ErrorResponse;
+```
+
+##### Update Profile
+
+- Method: `PUT`
+- Path: `/users/me`
+- Auth: Bearer (JWT access token)
+- Security Aspects:
+  - Need valid JWT access token
+  - Robust request body validation
+  - Rate Limiter: Per-IP limit, 60 requests per 1 minute
+  - Email cannot be changed
+
+**Request Body**
+
+```typescript
+type UpdateProfileRequest = {
+  name: string;
+  phone: string;
+};
+```
+
+**Response Body : 200 OK**
+
+```typescript
+type UpdateProfileResponse = Response<{
+  id: number;
+  name: string;
+  email: string;
+  phone: string;
+  created_at: string;
+  updated_at: string;
+}>;
+```
+
+**Error Response Body : 4xx, 5xx**
+
+```typescript
+type UpdateProfileError = ErrorResponse;
+```
+
+---
+
 #### Locations
 
 **Base Path**: `/api/v1/locations`
+
+##### Get Locations
+
+- Method: `GET`
+- Path: `/locations`
+- Auth: Bearer (JWT access token)
+- Security Aspects:
+  - Need valid JWT access token
+  - Rate Limiter: Per-IP limit, 60 requests per 1 minute
+
+**Request Query Params**
+
+```typescript
+type GetLocationsRequest = PaginatedQueryParams & {
+  category?: "country" | "province" | "city" | "district" | "neighborhood";
+};
+```
+
+**Response Body : 200 OK**
+
+```typescript
+type GetLocationsResponse = PaginatedResponse<{
+  id: number;
+  name: string;
+  category: "country" | "province" | "city" | "district" | "neighborhood";
+  description: string | null;
+  latitude: number | null;
+  longitude: number | null;
+  parent_id: number | null;
+  created_at: string;
+  updated_at: string;
+}>;
+```
+
+**Error Response Body : 4xx, 5xx**
+
+```typescript
+type GetLocationsError = ErrorResponse;
+```
+
+---
 
 #### Searches (search for listings)
 
