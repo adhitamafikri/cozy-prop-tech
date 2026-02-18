@@ -1324,7 +1324,7 @@ type GetPropertyImagesResponse = Response<{
   property_id: number;
   url: string;
   is_primary: boolean;
-  order: number;
+  sort_order: number;
   created_at: string;
   updated_at: string;
 }[]>;
@@ -1528,11 +1528,609 @@ type DeletePropertyTypeError = ErrorResponse;
 
 **Base Path**: `/api/v1/admin/listings`
 
+##### Get Listings
+
+- Method: `GET`
+- Path: `/listings`
+- Auth: Bearer (JWT access token)
+- Security Aspects:
+  - Need valid JWT access token
+  - Rate Limiter: Per-IP limit, 60 requests per 1 minute
+
+**Request Query Params**
+
+```typescript
+type GetListingsRequest = PaginatedQueryParams & {
+  status?: "active" | "inactive";
+  property_id?: number;
+};
+```
+
+**Response Body : 200 OK**
+
+```typescript
+type GetListingsResponse = PaginatedResponse<{
+  id: number;
+  property_id: number;
+  title: string;
+  description: string | null;
+  base_price: number;
+  status: "active" | "inactive";
+  guest_capacity: number;
+  minimum_reservation_nights: number;
+  maximum_reservation_nights: number;
+  cleaning_fee: number | null;
+  extra_guest_capacity: number;
+  extra_guest_fee: number | null;
+  num_beds: number;
+  num_bathrooms: number;
+  num_bedrooms: number;
+  amenities: Record<string, any> | null;
+  created_at: string;
+  updated_at: string;
+  property: { id: number; title: string; address: string } | null;
+}>;
+```
+
+**Error Response Body : 4xx, 5xx**
+
+```typescript
+type GetListingsError = ErrorResponse;
+```
+
+##### Get Listing By ID
+
+- Method: `GET`
+- Path: `/listings/:id`
+- Auth: Bearer (JWT access token)
+- Security Aspects:
+  - Need valid JWT access token
+  - Rate Limiter: Per-IP limit, 60 requests per 1 minute
+
+**Request Params**
+
+```typescript
+type RequestParams = {
+  id: number; // id of listing
+};
+```
+
+**Response Body : 200 OK**
+
+```typescript
+type GetListingByIDResponse = Response<{
+  id: number;
+  property_id: number;
+  title: string;
+  description: string | null;
+  base_price: number;
+  status: "active" | "inactive";
+  guest_capacity: number;
+  minimum_reservation_nights: number;
+  maximum_reservation_nights: number;
+  cleaning_fee: number | null;
+  extra_guest_capacity: number;
+  extra_guest_fee: number | null;
+  num_beds: number;
+  num_bathrooms: number;
+  num_bedrooms: number;
+  amenities: Record<string, any> | null;
+  created_at: string;
+  updated_at: string;
+  property: { id: number; title: string; address: string } | null;
+}>;
+```
+
+**Error Response Body : 4xx, 5xx**
+
+```typescript
+type GetListingByIDError = ErrorResponse;
+```
+
+##### Create Listing
+
+- Method: `POST`
+- Path: `/listings`
+- Auth: Bearer (JWT access token)
+- Security Aspects:
+  - Need valid JWT access token
+  - Robust request body validation
+  - Rate Limiter: Per-IP limit, 60 requests per 1 minute
+
+**Request Body**
+
+```typescript
+type CreateListingRequest = {
+  property_id: number;
+  title: string;
+  description?: string;
+  base_price: number;
+  status?: "active" | "inactive";
+  guest_capacity: number;
+  minimum_reservation_nights: number;
+  maximum_reservation_nights: number;
+  cleaning_fee?: number;
+  extra_guest_capacity?: number;
+  extra_guest_fee?: number;
+  num_beds: number;
+  num_bathrooms: number;
+  num_bedrooms: number;
+  amenities?: Record<string, any>;
+};
+```
+
+**Response Body : 201 OK**
+
+```typescript
+type CreateListingResponse = Response<{
+  id: number;
+  property_id: number;
+  title: string;
+  description: string | null;
+  base_price: number;
+  status: "active" | "inactive";
+  guest_capacity: number;
+  minimum_reservation_nights: number;
+  maximum_reservation_nights: number;
+  cleaning_fee: number | null;
+  extra_guest_capacity: number;
+  extra_guest_fee: number | null;
+  num_beds: number;
+  num_bathrooms: number;
+  num_bedrooms: number;
+  amenities: Record<string, any> | null;
+  created_at: string;
+  updated_at: string;
+}>;
+```
+
+**Error Response Body : 4xx, 5xx**
+
+```typescript
+type CreateListingError = ErrorResponse;
+```
+
+##### Update Listing
+
+- Method: `PUT`
+- Path: `/listings/:id`
+- Auth: Bearer (JWT access token)
+- Security Aspects:
+  - Need valid JWT access token
+  - Robust request body validation
+  - Rate Limiter: Per-IP limit, 60 requests per 1 minute
+
+**Request Params**
+
+```typescript
+type RequestParams = {
+  id: number; // id of listing
+};
+```
+
+**Request Body**
+
+```typescript
+type UpdateListingRequest = {
+  property_id?: number;
+  title?: string;
+  description?: string;
+  base_price?: number;
+  status?: "active" | "inactive";
+  guest_capacity?: number;
+  minimum_reservation_nights?: number;
+  maximum_reservation_nights?: number;
+  cleaning_fee?: number;
+  extra_guest_capacity?: number;
+  extra_guest_fee?: number;
+  num_beds?: number;
+  num_bathrooms?: number;
+  num_bedrooms?: number;
+  amenities?: Record<string, any>;
+};
+```
+
+**Response Body : 200 OK**
+
+```typescript
+type UpdateListingResponse = Response<{
+  id: number;
+  property_id: number;
+  title: string;
+  description: string | null;
+  base_price: number;
+  status: "active" | "inactive";
+  guest_capacity: number;
+  minimum_reservation_nights: number;
+  maximum_reservation_nights: number;
+  cleaning_fee: number | null;
+  extra_guest_capacity: number;
+  extra_guest_fee: number | null;
+  num_beds: number;
+  num_bathrooms: number;
+  num_bedrooms: number;
+  amenities: Record<string, any> | null;
+  created_at: string;
+  updated_at: string;
+}>;
+```
+
+**Error Response Body : 4xx, 5xx**
+
+```typescript
+type UpdateListingError = ErrorResponse;
+```
+
+##### Delete Listing
+
+- Method: `DELETE`
+- Path: `/listings/:id`
+- Auth: Bearer (JWT access token)
+- Security Aspects:
+  - Need valid JWT access token
+  - Rate Limiter: Per-IP limit, 60 requests per 1 minute
+  - Should return error if the listing is used by bookings
+
+**Request Params**
+
+```typescript
+type RequestParams = {
+  id: number; // id of listing
+};
+```
+
+**Response Body : 200 OK**
+
+```typescript
+type DeleteListingResponse = Response<{ message: string }>;
+```
+
+**Error Response Body : 4xx, 5xx**
+
+```typescript
+type DeleteListingError = ErrorResponse;
+```
+
+##### Get Listing Images
+
+- Method: `GET`
+- Path: `/listings/:id/images`
+- Auth: Bearer (JWT access token)
+- Security Aspects:
+  - Need valid JWT access token
+  - Rate Limiter: Per-IP limit, 60 requests per 1 minute
+
+**Request Params**
+
+```typescript
+type RequestParams = {
+  id: number; // id of listing
+};
+```
+
+**Response Body : 200 OK**
+
+```typescript
+type GetListingImagesResponse = Response<{
+  id: number;
+  listing_id: number;
+  url: string;
+  is_primary: boolean;
+  sort_order: number;
+  created_at: string;
+  updated_at: string;
+}[]>;
+```
+
+**Error Response Body : 4xx, 5xx**
+
+```typescript
+type GetListingImagesError = ErrorResponse;
+```
+
 ---
 
 #### Listing Availability Management
 
 **Base Path**: `/api/v1/admin/listing-availability`
+
+##### Get Listing Availability
+
+- Method: `GET`
+- Path: `/listing-availability`
+- Auth: Bearer (JWT access token)
+- Security Aspects:
+  - Need valid JWT access token
+  - Rate Limiter: Per-IP limit, 60 requests per 1 minute
+
+**Request Query Params**
+
+```typescript
+type GetListingAvailabilityRequest = {
+  listing_id: number;
+  start_date: string; // ISO date
+  end_date: string; // ISO date
+};
+```
+
+**Response Body : 200 OK**
+
+```typescript
+type GetListingAvailabilityResponse = Response<{
+  id: number;
+  listing_id: number;
+  date: string;
+  status: "available" | "booked" | "blocked";
+  price_override: number | null;
+  created_at: string;
+  updated_at: string;
+}[]>;
+```
+
+**Error Response Body : 4xx, 5xx**
+
+```typescript
+type GetListingAvailabilityError = ErrorResponse;
+```
+
+##### Get Listing Availability By ID
+
+- Method: `GET`
+- Path: `/listing-availability/:id`
+- Auth: Bearer (JWT access token)
+- Security Aspects:
+  - Need valid JWT access token
+  - Rate Limiter: Per-IP limit, 60 requests per 1 minute
+
+**Request Params**
+
+```typescript
+type RequestParams = {
+  id: number; // id of listing availability
+};
+```
+
+**Response Body : 200 OK**
+
+```typescript
+type GetListingAvailabilityByIDResponse = Response<{
+  id: number;
+  listing_id: number;
+  date: string;
+  status: "available" | "booked" | "blocked";
+  price_override: number | null;
+  created_at: string;
+  updated_at: string;
+}>;
+```
+
+**Error Response Body : 4xx, 5xx**
+
+```typescript
+type GetListingAvailabilityByIDError = ErrorResponse;
+```
+
+##### Create Listing Availability
+
+- Method: `POST`
+- Path: `/listing-availability`
+- Auth: Bearer (JWT access token)
+- Security Aspects:
+  - Need valid JWT access token
+  - Robust request body validation
+  - Rate Limiter: Per-IP limit, 60 requests per 1 minute
+
+**Request Body**
+
+```typescript
+type CreateListingAvailabilityRequest = {
+  listing_id: number;
+  date: string;
+  status: "available" | "booked" | "blocked";
+  price_override?: number;
+};
+```
+
+**Response Body : 201 OK**
+
+```typescript
+type CreateListingAvailabilityResponse = Response<{
+  id: number;
+  listing_id: number;
+  date: string;
+  status: "available" | "booked" | "blocked";
+  price_override: number | null;
+  created_at: string;
+  updated_at: string;
+}>;
+```
+
+**Error Response Body : 4xx, 5xx**
+
+```typescript
+type CreateListingAvailabilityError = ErrorResponse;
+```
+
+##### Update Listing Availability
+
+- Method: `PUT`
+- Path: `/listing-availability/:id`
+- Auth: Bearer (JWT access token)
+- Security Aspects:
+  - Need valid JWT access token
+  - Robust request body validation
+  - Rate Limiter: Per-IP limit, 60 requests per 1 minute
+
+**Request Params**
+
+```typescript
+type RequestParams = {
+  id: number; // id of listing availability
+};
+```
+
+**Request Body**
+
+```typescript
+type UpdateListingAvailabilityRequest = {
+  status: "available" | "booked" | "blocked";
+  price_override?: number;
+};
+```
+
+**Response Body : 200 OK**
+
+```typescript
+type UpdateListingAvailabilityResponse = Response<{
+  id: number;
+  listing_id: number;
+  date: string;
+  status: "available" | "booked" | "blocked";
+  price_override: number | null;
+  created_at: string;
+  updated_at: string;
+}>;
+```
+
+**Error Response Body : 4xx, 5xx**
+
+```typescript
+type UpdateListingAvailabilityError = ErrorResponse;
+```
+
+##### Delete Listing Availability
+
+- Method: `DELETE`
+- Path: `/listing-availability/:id`
+- Auth: Bearer (JWT access token)
+- Security Aspects:
+  - Need valid JWT access token
+  - Rate Limiter: Per-IP limit, 60 requests per 1 minute
+
+**Request Params**
+
+```typescript
+type RequestParams = {
+  id: number; // id of listing availability
+};
+```
+
+**Response Body : 200 OK**
+
+```typescript
+type DeleteListingAvailabilityResponse = Response<{ message: string }>;
+```
+
+**Error Response Body : 4xx, 5xx**
+
+```typescript
+type DeleteListingAvailabilityError = ErrorResponse;
+```
+
+##### Bulk Create Listing Availability
+
+- Method: `POST`
+- Path: `/listing-availability/bulk`
+- Auth: Bearer (JWT access token)
+- Security Aspects:
+  - Need valid JWT access token
+  - Robust request body validation
+  - Rate Limiter: Per-IP limit, 60 requests per 1 minute
+
+**Request Body**
+
+```typescript
+type BulkCreateListingAvailabilityRequest = {
+  listing_id: number;
+  items: {
+    date: string;
+    status: "available" | "booked" | "blocked";
+    price_override?: number;
+  }[];
+};
+```
+
+**Response Body : 201 OK**
+
+```typescript
+type BulkCreateListingAvailabilityResponse = Response<{
+  ids: number[];
+  message: string;
+}>;
+```
+
+**Error Response Body : 4xx, 5xx**
+
+```typescript
+type BulkCreateListingAvailabilityError = ErrorResponse;
+```
+
+##### Bulk Update Listing Availability
+
+- Method: `PUT`
+- Path: `/listing-availability/bulk`
+- Auth: Bearer (JWT access token)
+- Security Aspects:
+  - Need valid JWT access token
+  - Robust request body validation
+  - Rate Limiter: Per-IP limit, 60 requests per 1 minute
+
+**Request Body**
+
+```typescript
+type BulkUpdateListingAvailabilityRequest = {
+  ids: number[];
+  status: "available" | "booked" | "blocked";
+  price_override?: number;
+};
+```
+
+**Response Body : 200 OK**
+
+```typescript
+type BulkUpdateListingAvailabilityResponse = Response<{
+  updated_count: number;
+  message: string;
+}>;
+```
+
+**Error Response Body : 4xx, 5xx**
+
+```typescript
+type BulkUpdateListingAvailabilityError = ErrorResponse;
+```
+
+##### Bulk Delete Listing Availability
+
+- Method: `DELETE`
+- Path: `/listing-availability/bulk`
+- Auth: Bearer (JWT access token)
+- Security Aspects:
+  - Need valid JWT access token
+  - Rate Limiter: Per-IP limit, 60 requests per 1 minute
+
+**Request Body**
+
+```typescript
+type BulkDeleteListingAvailabilityRequest = {
+  ids: number[];
+};
+```
+
+**Response Body : 200 OK**
+
+```typescript
+type BulkDeleteListingAvailabilityResponse = Response<{
+  deleted_count: number;
+  message: string;
+}>;
+```
+
+**Error Response Body : 4xx, 5xx**
+
+```typescript
+type BulkDeleteListingAvailabilityError = ErrorResponse;
+```
 
 ---
 
@@ -1562,7 +2160,7 @@ type DeletePropertyTypeError = ErrorResponse;
 
 **Base Path**: `/api/v1/listings`
 
-#### Bookings
+#### Booking (P2 - Nice to Have)
 
 **Base Path**: `/api/v1/bookings`
 
