@@ -869,6 +869,210 @@ type DeletePermissionError = ErrorResponse;
 
 **Base Path**: `/api/v1/admin/locations`
 
+##### Get Locations
+
+- Method: `GET`
+- Path: `/locations`
+- Auth: Bearer (JWT access token)
+- Security Aspects:
+  - Need valid JWT access token
+  - Rate Limiter: Per-IP limit, 60 requests per 1 minute
+
+**Request Query Params**
+
+```typescript
+type GetLocationsRequest = PaginatedQueryParams;
+```
+
+**Response Body : 200 OK**
+
+```typescript
+type GetLocationsResponse = PaginatedResponse<{
+  id: number;
+  name: string;
+  category: "country" | "province" | "city" | "district" | "neighborhood";
+  description?: string;
+  latitude?: number;
+  longitude?: number;
+  parent_id?: number;
+  created_at: string;
+  updated_at: string;
+}>;
+```
+
+**Error Response Body : 4xx, 5xx**
+
+```typescript
+type GetLocationsError = ErrorResponse;
+```
+
+##### Get Location By ID
+
+- Method: `GET`
+- Path: `/locations/:id`
+- Auth: Bearer (JWT access token)
+- Security Aspects:
+  - Need valid JWT access token
+  - Rate Limiter: Per-IP limit, 60 requests per 1 minute
+
+**Request Params**
+
+```typescript
+type RequestParams = {
+  id: number; // id of location
+};
+```
+
+**Response Body : 200 OK**
+
+```typescript
+type GetLocationByIDResponse = Response<{
+  id: number;
+  name: string;
+  category: "country" | "province" | "city" | "district" | "neighborhood";
+  description?: string;
+  latitude?: number;
+  longitude?: number;
+  parent_id?: number;
+  created_at: string;
+  updated_at: string;
+}>;
+```
+
+**Error Response Body : 4xx, 5xx**
+
+```typescript
+type GetLocationByIDError = ErrorResponse;
+```
+
+##### Create Location
+
+- Method: `POST`
+- Path: `/locations`
+- Auth: Bearer (JWT access token)
+- Security Aspects:
+  - Need valid JWT access token
+  - Robust request body validation
+  - Rate Limiter: Per-IP limit, 60 requests per 1 minute
+
+**Request Body**
+
+```typescript
+type CreateLocationRequest = {
+  name: string;
+  category: "country" | "province" | "city" | "district" | "neighborhood";
+  description?: string;
+  latitude?: number;
+  longitude?: number;
+  parent_id?: number;
+};
+```
+
+**Response Body : 201 OK**
+
+```typescript
+type CreateLocationResponse = Response<{
+  id: number;
+  name: string;
+  category: "country" | "province" | "city" | "district" | "neighborhood";
+  description?: string;
+  latitude?: number;
+  longitude?: number;
+  parent_id?: number;
+  created_at: string;
+  updated_at: string;
+}>;
+```
+
+**Error Response Body : 4xx, 5xx**
+
+```typescript
+type CreateLocationError = ErrorResponse;
+```
+
+##### Update Location
+
+- Method: `PUT`
+- Path: `/locations/:id`
+- Auth: Bearer (JWT access token)
+- Security Aspects:
+  - Need valid JWT access token
+  - Robust request body validation
+  - Rate Limiter: Per-IP limit, 60 requests per 1 minute
+
+**Request Params**
+
+```typescript
+type RequestParams = {
+  id: number; // id of location
+};
+```
+
+**Request Body**
+
+```typescript
+type UpdateLocationRequest = {
+  name?: string;
+  category?: "country" | "province" | "city" | "district" | "neighborhood";
+  description?: string;
+  latitude?: number;
+  longitude?: number;
+  parent_id?: number;
+};
+```
+
+**Response Body : 200 OK**
+
+```typescript
+type UpdateLocationResponse = Response<{
+  id: number;
+  name: string;
+  category: "country" | "province" | "city" | "district" | "neighborhood";
+  description?: string;
+  latitude?: number;
+  longitude?: number;
+  parent_id?: number;
+  created_at: string;
+  updated_at: string;
+}>;
+```
+
+**Error Response Body : 4xx, 5xx**
+
+```typescript
+type UpdateLocationError = ErrorResponse;
+```
+
+##### Delete Location
+
+- Method: `DELETE`
+- Path: `/locations/:id`
+- Auth: Bearer (JWT access token)
+- Security Aspects:
+  - Need valid JWT access token
+  - Rate Limiter: Per-IP limit, 60 requests per 1 minute
+  - Should return error if the location is used by other entities (properties, listings)
+
+**Request Params**
+
+```typescript
+type RequestParams = {
+  id: number; // id of location
+};
+```
+
+**Response Body : 200 OK**
+
+```typescript
+type DeleteLocationResponse = Response<{ message: string }>;
+```
+
+**Error Response Body : 4xx, 5xx**
+
+```typescript
+type DeleteLocationError = ErrorResponse;
+```
+
 ---
 
 #### Properties Management
