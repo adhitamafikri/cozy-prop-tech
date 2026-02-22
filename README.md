@@ -18,9 +18,28 @@ You need to have these things installed on your machine, in order to run this pr
 - Bun
 - Go (programming language)
 
-## Development Process
+## AI Assisted Development
 
-This project supports AI-assisted engineering with **Opencode** and **Claude Code**
+> This project supports AI-assisted engineering with **Opencode**
+
+This is one of the interesting part in this project. This project demonstrates AI-Assisted development using multiple agents. Each of these agents are called a `subagent`, which operates in a _Role-isolated execution context_.
+
+### Implementation Agents
+
+> Focuses feature implementation while maintaining the code quality through unit testing
+
+1. Frontend Agent
+2. Backend Agent
+
+### Review Agents
+
+1. Frontend Reviewer Agent
+2. Backend Reviewer Agent
+
+### Audit and E2E Testing Agents
+
+1. Frontend Accessibility Agent
+2. Frontend E2E Testing Agent
 
 ## Projects
 
@@ -42,7 +61,7 @@ Our backend **api** is responsible for handling these domains:
 - Availability
 - Booking
 
-This backend project uses *Hexagonal Architecture*
+This backend project uses _Hexagonal Architecture_
 
 ## Running the Project Locally
 
@@ -66,13 +85,15 @@ make down
 
 You will have these services running on your machine:
 
-| Services                 | Ports |
-| ------------------------ | ----- |
-| web                      | 5173  |
-| admin                    | 5174  |
-| api                      | 8082  |
+| Services | Ports |
+| -------- | ----- |
+| web      | 5173  |
+| admin    | 5174  |
+| api      | 8082  |
 
 ## Reading Links
 
 - [https://github.com/khannedy/golang-clean-architecture/blob/main](https://github.com/khannedy/golang-clean-architecture/blob/main)
 - [https://betterstack.com/community/guides/logging/logging-in-go/](https://betterstack.com/community/guides/logging/logging-in-go/)
+- [https://opencode.ai/docs/agents](https://opencode.ai/docs/agents)
+- [https://code.claude.com/docs/en/sub-agents](https://code.claude.com/docs/en/sub-agents)

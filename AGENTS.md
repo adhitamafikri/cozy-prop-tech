@@ -30,37 +30,37 @@ Our backend **api** is responsible for handling these domains:
 
 ### Frontend
 
-| Category | Technology | Notes |
-|----------|------------|-------|
-| User Site | bun, Vite Vue 3, Pinia, TypeScript, TailwindCSS | Customer-facing |
-| Admin Site | bun, Vite, Vue 3, Pinia, TypeScript, TailwindCSS | Admin-facing |
-| Maps | Leaflet, OpenStreetMap | |
-| Forms & Validation | VeeValidate | |
-| Unit Testing | Vitest, @testing-library/vue | |
-| E2E Testing | Playwright | |
+| Category           | Technology                                                       | Notes           |
+| ------------------ | ---------------------------------------------------------------- | --------------- |
+| User Site          | bun, Vite Vue 3, Vue Router 5.x, Pinia, TypeScript, TailwindCSS  | Customer-facing |
+| Admin Site         | bun, Vite, Vue 3, Vue Router 5.x, Pinia, TypeScript, TailwindCSS | Admin-facing    |
+| Maps               | Leaflet, OpenStreetMap                                           |                 |
+| Forms & Validation | VeeValidate                                                      |                 |
+| Unit Testing       | Vitest, @testing-library/vue                                     |                 |
+| E2E Testing        | Playwright                                                       |                 |
 
 ### Backend
 
-| Category | Technology | Notes |
-|----------|------------|-------|
-| Language | Go v1.2 | |
-| Routing | Gin | github.com/gin-gonic/gin |
-| Database | PostgreSQL v17, sqlx | |
-| Migrations | Golang Migrate | Run with Docker |
-| Caching | Redis v8, Go-Redis | |
-| Logging | slog | |
-| Auth | JWT | |
-| Live Reload | Air | |
-| Reverse Proxy | nginx | |
-| Architecture | Hexagonal | |
+| Category      | Technology           | Notes                    |
+| ------------- | -------------------- | ------------------------ |
+| Language      | Go v1.2              |                          |
+| Routing       | Gin                  | github.com/gin-gonic/gin |
+| Database      | PostgreSQL v17, sqlx |                          |
+| Migrations    | Golang Migrate       | Run with Docker          |
+| Caching       | Redis v8, Go-Redis   |                          |
+| Logging       | slog                 |                          |
+| Auth          | JWT                  |                          |
+| Live Reload   | Air                  |                          |
+| Reverse Proxy | nginx                |                          |
+| Architecture  | Hexagonal            |                          |
 
 ### Infra CI/CD
 
-| Category | Technology |
-|----------|------------|
-| Containerization | Docker, Docker Compose |
-| Secrets Management | Infisical |
-| CI/CD | GitHub Actions |
+| Category           | Technology             |
+| ------------------ | ---------------------- |
+| Containerization   | Docker, Docker Compose |
+| Secrets Management | Infisical              |
+| CI/CD              | GitHub Actions         |
 
 ## Project Notes
 
