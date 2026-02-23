@@ -21,6 +21,7 @@ func main() {
 		Name:     cfg.DB.Name,
 		User:     cfg.DB.User,
 		Password: cfg.DB.Password,
+		SSLMode:  cfg.DB.SSLMode,
 	})
 	cache := config.NewRedis(&config.RedisConfig{
 		Host:   cfg.Redis.Host,
